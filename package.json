@@ -1,0 +1,39 @@
+{
+  "name": "lpmi-13.github.io",
+  "version": "1.0.0",
+  "description": "current web dev portfolio for Adam Leskis",
+  "main": "index.html",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:cypress": "start-server-and-test start http://localhost:8080 cy:open",
+    "test:headless": "start-server-and-test start http://localhost:8080 cy:run",
+    "start": "npx http-server",
+    "docker:security": "docker run --rm -e SCAN_URL=\"http://192.168.0.12:8080\" lirantal/is-website-vulnerable:latest",
+    "test:security": "start-server-and-test start http://localhost:8080 docker:security"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpmi-13/lpmi-13.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "projects",
+    "technology",
+    "eduction",
+    "language"
+  ],
+  "author": "Adam Leskis (lpmi-13)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lpmi-13/lpmi-13.github.io/issues"
+  },
+  "homepage": "https://github.com/lpmi-13/lpmi-13.github.io#readme",
+  "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
+    "axe-core": "^3.5.3",
+    "cypress": "^4.3.0",
+    "cypress-axe": "^0.8.1",
+    "start-server-and-test": "^1.10.11"
+  }
+}
