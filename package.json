@@ -8,7 +8,7 @@
     "cy:run": "cypress run",
     "test:cypress": "start-server-and-test start http://localhost:8080 cy:open",
     "test:headless": "start-server-and-test start http://localhost:8080 cy:run",
-    "start": "npx http-server",
+    "start": "http-server",
     "docker:security": "docker run --rm -e SCAN_URL=\"http://192.168.0.12:8080\" lirantal/is-website-vulnerable:latest",
     "test:security": "start-server-and-test start http://localhost:8080 docker:security"
   },
@@ -34,6 +34,7 @@
     "axe-core": "^3.5.3",
     "cypress": "^4.3.0",
     "cypress-axe": "^0.8.1",
+    "http-server": "^0.12.1",
     "start-server-and-test": "^1.10.11"
   }
 }
