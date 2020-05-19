@@ -2,7 +2,10 @@
 
 ## run locally
 
-`$ npx http-server`
+```
+$ npm i
+$ npm start
+```
 
 ## basic security and a11y testing
 
@@ -17,8 +20,9 @@
 * developed several education-focused web applications targeting
 the needs of English language learners
 
+* developed several tech-focused web and terminal-based applications targeting
+the needs of developers
+
 * have given presentations at conferences and software meetups
 on these projects
 
-* developed three small-scale CLI learning materials to help
-beginning software developers develop proficiency using git
