@@ -1,0 +1,43 @@
+a, h1, h2, .star-light, section.success, span.skills {
+  color: #333333 !important;
+}
+
+.text-link {
+  background: white;
+  border-radius: 2em;
+  padding: 0.25em;
+  text-decoration-line: underline;
+}
+
+.show-modal {
+  display: flex;
+  overflow: scroll;
+
+  .modal-content {
+    min-height: 135%;
+  }
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.list-inline>li {
+  padding-top: 5px;
+}
+
+.navbar-collapse {
+  transition: all 1.3s;
+  max-height: 0;
+  .in {
+    min-height: 4em;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.modal.in {
+  background: white;
+}
