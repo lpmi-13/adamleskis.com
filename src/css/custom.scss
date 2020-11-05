@@ -11,6 +11,8 @@ a, h1, h2, .star-light, section.success, span.skills {
 
 .show-modal {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   overflow: scroll;
 
   .modal-content {
