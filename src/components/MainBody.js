@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 // page structure components
 import NavBar from '../components/NavBar';
 import Header from '../components/Header';
 import About from '../components/About';
+import ScrollToTop from '../components/ScrollToTop';
 import Footer from '../components/Footer';
 
 // custom components
@@ -47,129 +46,125 @@ const MainBody = () => {
 
         <NavBar onClick={handleToggleModal} show={showNavBar} /> 
         <Header />
+        <main>
 
-        {/* <!-- Portfolio Grid Section --> */}
-        <section id="technology">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12 text-center">
-                        <h3>Technology Education Focus</h3>
-                        <hr className="star-primary"/>
+            <section id="technology">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 text-center">
+                            <h2>Technology Education Focus</h2>
+                            <hr className="star-primary"/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        {techItemList.map((item, idx) => {
+                            const { projectName } = item;
+                            return (
+                                <PortfolioItem
+                                  itemNumber={idx}
+                                  key={projectName}
+                                  onClick={handleOpenModal}
+                                  {...item}
+                                />
+                            )
+                        })}
                     </div>
                 </div>
-                <div className="row">
-                    {techItemList.map((item, idx) => {
-                        const { projectName } = item;
-                        return (
-                            <PortfolioItem
-                              itemNumber={idx}
-                              key={projectName}
-                              onClick={handleOpenModal}
-                              {...item}
-                            />
-                        )
-                    })}
-                </div>
-            </div>
-        </section>
+            </section>
 
 
-        <section id="language">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12 text-center">
-                        <h3>Language Education Focus</h3>
-                        <hr className="star-primary"/>
+            <section id="language">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 text-center">
+                            <h2>Language Education Focus</h2>
+                            <hr className="star-primary"/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        {languageItemList.map((item, idx) => {
+                            const { projectName } = item;
+                            return (
+                                <PortfolioItem
+                                  key={projectName}
+                                  itemNumber={idx}
+                                  onClick={handleOpenModal}
+                                  {...item}
+                                />
+                            )
+                        })}
                     </div>
                 </div>
-                <div className="row">
-                    {languageItemList.map((item, idx) => {
-                        const { projectName } = item;
-                        return (
-                            <PortfolioItem
-                              key={projectName}
-                              itemNumber={idx}
-                              onClick={handleOpenModal}
-                              {...item}
-                            />
-                        )
-                    })}
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="math">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12 text-center">
-                        <h3>Math Education Focus</h3>
-                        <hr className="star-primary"/>
+            <section id="math">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 text-center">
+                            <h2>Math Education Focus</h2>
+                            <hr className="star-primary"/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        {mathItemList.map((item, idx) => {
+                            const { projectName } = item;
+                            return (
+                                <PortfolioItem
+                                  key={projectName}
+                                  itemNumber={idx}
+                                  onClick={handleOpenModal}
+                                  {...item}
+                                />
+                            )
+                        })}
                     </div>
                 </div>
-                <div className="row">
-                    {mathItemList.map((item, idx) => {
-                        const { projectName } = item;
-                        return (
-                            <PortfolioItem
-                              key={projectName}
-                              itemNumber={idx}
-                              onClick={handleOpenModal}
-                              {...item}
-                            />
-                        )
-                    })}
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="miscellaneous">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12 text-center">
-                        <h3>Miscellaneous</h3>
-                        <hr className="star-primary"/>
+            <section id="miscellaneous">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 text-center">
+                            <h2>Miscellaneous</h2>
+                            <hr className="star-primary"/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        {miscItemList.map((item, idx) => {
+                            const { projectName } = item;
+                            return (
+                                <PortfolioItem
+                                  key={projectName}
+                                  itemNumber={idx}
+                                  onClick={handleOpenModal}
+                                  {...item}
+                                />
+                            )
+                        })}
+                        <ProjectIdeas
+                          itemNumber={miscItemList.length + 1}
+                          onClick={handleOpenModal}
+                          type={MISC}
+                          imageNameWebP={lightWebP}
+                          imageNamePng={lightPng}
+                        />
+
+                        <Presentations
+                          itemNumber={miscItemList.length + 2}
+                          onClick={handleOpenModal}
+                          type={MISC}
+                          imageNameWebP={micWebP}
+                          imageNamePng={micPng}
+                        />
                     </div>
                 </div>
-                <div className="row">
-                    {miscItemList.map((item, idx) => {
-                        const { projectName } = item;
-                        return (
-                            <PortfolioItem
-                              key={projectName}
-                              itemNumber={idx}
-                              onClick={handleOpenModal}
-                              {...item}
-                            />
-                        )
-                    })}
-                    <ProjectIdeas
-                      itemNumber={miscItemList.length + 1}
-                      onClick={handleOpenModal}
-                      type={MISC}
-                      imageNameWebP={lightWebP}
-                      imageNamePng={lightPng}
-                    />
+            </section>
+            <About />
+            <ScrollToTop showModal={showModal} />   
+        </main>
 
-                    <Presentations
-                      itemNumber={miscItemList.length + 2}
-                      onClick={handleOpenModal}
-                      type={MISC}
-                      imageNameWebP={micWebP}
-                      imageNamePng={micPng}
-                    />
-                </div>
-            </div>
-        </section>
-
-        <About />
         <Footer />
 
-        {/* <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) --> */}
-        <div className={`scroll-top page-scroll ${showModal ? 'hide' : ''} visible-xs visible-sm`}>
-            <a className="btn btn-primary" aria-label="scroll back to top" href="#page-top">
-                <FontAwesomeIcon icon={faChevronUp} />
-            </a>
-        </div>
 
         {/* <!-- Portfolio Modals --> */}
 

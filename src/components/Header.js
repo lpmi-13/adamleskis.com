@@ -17,7 +17,7 @@ const Header = () => {
                         <div className="intro-text">
                             <h1 className="name">Adam Leskis</h1>
                             <hr className="star-light"/>
-                            <span className="skills">`Software Engineer & Learning Materials Engineer`</span>
+                            <span className="skills">Software Engineer & Learning Materials Engineer</span>
                         </div>
                     </div>
                 </div>

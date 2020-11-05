@@ -17,9 +17,16 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:headless": "BROWSER=none react-scripts start",
     "build": "react-scripts build && npm run post-build",
     "post-build": "cp -r build/* docs",
     "test": "react-scripts test",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:cypress": "start-server-and-test start http://localhost:3000 cy:open",
+    "test:headless": "start-server-and-test start:headless http://localhost:3000 cy:run",
+    "docker:security": "docker run --rm -e SCAN_URL=\"http://$(ip -4 addr show docker0 | grep -Po 'inet \\K[\\d.]+'):3000\" lirantal/is-website-vulnerable:latest",
+    "test:security": "start-server-and-test start:headless http://localhost:3000 docker:security",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,7 +48,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.1",
+    "axe-core": "^4.0.2",
+    "cypress": "^5.5.0",
+    "cypress-axe": "^0.10.0",
     "gh-pages": "^3.1.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "start-server-and-test": "^1.11.5"
   }
 }

@@ -17,7 +17,7 @@ const PortfolioItem = ({ itemNumber, imageNameWebP, imageNamePng, onClick, proje
                     <img src={imageNamePng} className="img-responsive" alt={`${projectName}`} loading="lazy"/>
                 </picture>
             </a>
-            <h5 className="text-center">{projectName}</h5>
+            <h3 className="text-center">{projectName}</h3>
         </div>
     )
 }

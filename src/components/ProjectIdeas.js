@@ -17,7 +17,7 @@ const ProjectIdeas = ({ itemNumber, imageNameWebP, imageNamePng, onClick, type }
                           <img src={imageNamePng} className="img-responsive" alt="project ideas" loading="lazy" />
                         </picture>
                     </a>
-                    <h5 className="text-center">project ideas</h5>
+                    <h3 className="text-center">project ideas</h3>
                 </div>
     )
 }
