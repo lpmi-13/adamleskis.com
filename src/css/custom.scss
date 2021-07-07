@@ -9,6 +9,10 @@ a, h1, h2, .star-light, section.success, span.skills {
   text-decoration-line: underline;
 }
 
+.web-link a {
+  text-decoration-line: underline;
+}
+
 .show-modal {
   display: flex;
   flex-direction: row;
@@ -24,8 +28,13 @@ h2 {
   font-size: 2em;
 }
 
-.list-inline>li {
-  padding-top: 5px;
+.list-inline {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    padding: 1em 0;
+  }
 }
 
 .navbar-collapse {

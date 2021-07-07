@@ -1,20 +1,23 @@
 import React from 'react';
 
-const PortfolioModal = ({
-    date,
-    description,
-    imageNamePng,
-    imageNameWebP,
-    itemNumber,
-    onClick,
-    projectName,
-    repoURL,
-    focus,
-    show,
-    type
-}) => {
+const PortfolioModal = props => {
+    const {
+      date,
+      description,
+      imageNamePng,
+      imageNameWebP,
+      itemNumber,
+      onClick,
+      projectName,
+      repoURL,
+      focus,
+      show,
+      type
+    } = props;
     const computedId = `#${type}Modal${itemNumber + 1}`; 
     const shouldShow = show === computedId;
+    // some projects don't have a URL where they're live
+    const displayURL = props.webURL !== undefined;
     return (
         <div className={`portfolio-modal  ${shouldShow ? 'show-modal' : ''} modal fade ${shouldShow ? 'in' : ''}`} id={computedId} tabIndex="-1" role="dialog" aria-hidden="true">
         <div className="modal-content">
@@ -37,21 +40,42 @@ const PortfolioModal = ({
                             </picture>
                             <p>{description}</p>
                             <ul className="list-inline item-details">
-                                <li>Date:
+                                <li>
+                                    <p>
+                                        Date:
+                                    </p>
                                     <strong>
                                         {date}
                                     </strong>
                                 </li>
-                                <li>Focus:
-                                    <strong>
-                                        {focus}
-                                    </strong>
-                                </li>
                                 <li>
-                                  Github repositories:
-                                    <strong><a href={repoURL}>{repoURL}</a>
+                                   <p>
+                                       Focus:
+                                   </p>
+                                   <strong>
+                                       {focus}
+                                   </strong>
+                                </li>
+                                <li className="web-link">
+                                    <p>
+                                      Github repository:
+                                    </p>
+                                    <strong>
+                                        <a href={repoURL}>{repoURL}</a>
                                     </strong>
                                 </li>
+                                {
+                                  displayURL && (
+                                      <li className="web-link">
+                                          <p>
+                                            Live at 
+                                          </p>
+                                          <strong>
+                                            <a href={props.webURL}>{props.webURL}</a>
+                                          </strong>
+                                      </li>
+                                  )
+                                }
                             </ul>
                             <button type="button" onClick={onClick} className="btn btn-default" data-dismiss="modal"><i className="fa fa-times"></i> Close</button>
                         </div>

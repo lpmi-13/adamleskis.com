@@ -185,6 +185,7 @@ const MainBody = () => {
                   onClick={handleCloseModal}
                   itemNumber={idx}
                   show={showModal}
+                  type={TECHNOLOGY}
                   {...item}
                   />
             )
@@ -198,6 +199,7 @@ const MainBody = () => {
                   onClick={handleCloseModal}
                   itemNumber={idx}
                   show={showModal}
+                  type={LANGUAGE}
                   {...item}
                   />
             )
@@ -212,6 +214,7 @@ const MainBody = () => {
                   onClick={handleCloseModal}
                   itemNumber={idx}
                   show={showModal}
+                  type={MATH}
                   {...item}
                   />
             )
@@ -225,6 +228,7 @@ const MainBody = () => {
                   onClick={handleCloseModal}
                   itemNumber={idx}
                   show={showModal}
+                  type={MISC}
                   {...item}
                   />
             )
