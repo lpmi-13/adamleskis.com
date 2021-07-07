@@ -20,6 +20,8 @@ import howFastPng from './img/portfolio/howfast_circle.png';
 import howFastWebP from './img/portfolio/howfast_circle.webp';
 import ipPng from './img/portfolio/ip.png';
 import ipWebP from './img/portfolio/ip.webp';
+import k8sDOPng from './img/portfolio/k8sDO.png';
+import k8sDOWebP from './img/portfolio/k8sDO.webp';
 import mergeAMaticPng from './img/portfolio/merge-a-matic.png';
 import mergeAMaticWebP from './img/portfolio/merge-a-matic.webp';
 import minimalsPng from './img/portfolio/minimals.png';
@@ -211,6 +213,15 @@ export const mathItemList = [
 ]
 
 export const miscItemList = [
+    {
+        date: 'June 2021',
+        description: 'An adaptation of Kubernetes The Hardway on Digital Ocean.',
+        focus: 'Kubernetes',
+        imageNamePng: k8sDOPng,
+        imageNameWebP: k8sDOWebP,
+        projectName: 'K8s The Hard Way',
+        repoURL: GITHUB_BASE_URL + 'kubernetes-the-hard-way-do',
+    },
     {
         date: 'April 2020',
         description: 'This is a fun project using data from Wikipedia to determine how many countries\' national records in athletics the user is faster than. Just input your time and find out.',

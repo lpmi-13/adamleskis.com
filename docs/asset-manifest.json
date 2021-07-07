@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.8baf0208.chunk.css",
-    "main.js": "/static/js/main.b701fba8.chunk.js",
-    "main.js.map": "/static/js/main.b701fba8.chunk.js.map",
+    "main.js": "/static/js/main.5a9bc9b3.chunk.js",
+    "main.js.map": "/static/js/main.5a9bc9b3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.27340c2a.js",
     "runtime-main.js.map": "/static/js/runtime-main.27340c2a.js.map",
     "static/js/2.6a5d21ab.chunk.js": "/static/js/2.6a5d21ab.chunk.js",
@@ -34,6 +34,7 @@
     "static/media/howfast_circle.e593336f.png": "/static/media/howfast_circle.e593336f.png",
     "static/media/ip.2d3ef246.webp": "/static/media/ip.2d3ef246.webp",
     "static/media/ip.edfa27a8.png": "/static/media/ip.edfa27a8.png",
+    "static/media/k8sDO.51896e6c.webp": "/static/media/k8sDO.51896e6c.webp",
     "static/media/light.9a5933a0.webp": "/static/media/light.9a5933a0.webp",
     "static/media/light.abc90a59.png": "/static/media/light.abc90a59.png",
     "static/media/merge-a-matic.ef0d4455.png": "/static/media/merge-a-matic.ef0d4455.png",
@@ -62,6 +63,6 @@
     "static/js/runtime-main.27340c2a.js",
     "static/js/2.6a5d21ab.chunk.js",
     "static/css/main.8baf0208.chunk.css",
-    "static/js/main.b701fba8.chunk.js"
+    "static/js/main.5a9bc9b3.chunk.js"
   ]
 }
