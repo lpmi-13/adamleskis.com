@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.8baf0208.chunk.css",
-    "main.js": "/static/js/main.5a9bc9b3.chunk.js",
-    "main.js.map": "/static/js/main.5a9bc9b3.chunk.js.map",
+    "main.js": "/static/js/main.91e6370f.chunk.js",
+    "main.js.map": "/static/js/main.91e6370f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.27340c2a.js",
     "runtime-main.js.map": "/static/js/runtime-main.27340c2a.js.map",
     "static/js/2.6a5d21ab.chunk.js": "/static/js/2.6a5d21ab.chunk.js",
@@ -20,8 +20,8 @@
     "static/media/cartoon_bird.smallest.93deda5b.webp": "/static/media/cartoon_bird.smallest.93deda5b.webp",
     "static/media/cartoon_book.8f80b314.png": "/static/media/cartoon_book.8f80b314.png",
     "static/media/cartoon_book.e2a1335d.webp": "/static/media/cartoon_book.e2a1335d.webp",
-    "static/media/clock.44aff1d2.png": "/static/media/clock.44aff1d2.png",
     "static/media/clock.a8dda364.webp": "/static/media/clock.a8dda364.webp",
+    "static/media/clock.af713c4b.png": "/static/media/clock.af713c4b.png",
     "static/media/convo.241fb62a.webp": "/static/media/convo.241fb62a.webp",
     "static/media/convo.f63fa52f.png": "/static/media/convo.f63fa52f.png",
     "static/media/food-plate.smallest.9dccaa8a.webp": "/static/media/food-plate.smallest.9dccaa8a.webp",
@@ -45,6 +45,8 @@
     "static/media/minimals.7bce7b68.webp": "/static/media/minimals.7bce7b68.webp",
     "static/media/netmask-bits.33fcba82.webp": "/static/media/netmask-bits.33fcba82.webp",
     "static/media/netmask-bits.4ff940a2.png": "/static/media/netmask-bits.4ff940a2.png",
+    "static/media/parsons.2e4f6832.png": "/static/media/parsons.2e4f6832.png",
+    "static/media/parsons.6e1295fb.webp": "/static/media/parsons.6e1295fb.webp",
     "static/media/profile.39e1e0a6.png": "/static/media/profile.39e1e0a6.png",
     "static/media/profile.6dd61618.webp": "/static/media/profile.6dd61618.webp",
     "static/media/pypobot.652f2970.webp": "/static/media/pypobot.652f2970.webp",
@@ -63,6 +65,6 @@
     "static/js/runtime-main.27340c2a.js",
     "static/js/2.6a5d21ab.chunk.js",
     "static/css/main.8baf0208.chunk.css",
-    "static/js/main.5a9bc9b3.chunk.js"
+    "static/js/main.91e6370f.chunk.js"
   ]
 }

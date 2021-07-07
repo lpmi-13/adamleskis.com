@@ -28,6 +28,8 @@ import minimalsPng from './img/portfolio/minimals.png';
 import minimalsWebP from './img/portfolio/minimals.webp';
 import netmaskBitsPng from './img/portfolio/netmask-bits.png';
 import netmaskBitsWebP from './img/portfolio/netmask-bits.webp';
+import parsonsPng from './img/portfolio/parsons.png';
+import parsonsWebP from './img/portfolio/parsons.webp';
 import pypobotPng from './img/portfolio/pypobot.png';
 import pypobotWebP from './img/portfolio/pypobot.webp';
 import rebasicPng from './img/portfolio/rebasic.png';
@@ -101,6 +103,16 @@ export const techItemList = [
         repoURL: GITHUB_BASE_URL + 'submodz',
     },
     {
+        date: 'October 2020',
+        description: 'Using code from github to create parsons problems',
+        focus: 'code organization',
+        imageNamePng: parsonsPng,
+        imageNameWebP: parsonsWebP,
+        projectName: 'parsons problems',
+        repoURL: GITHUB_BASE_URL + 'parsons-problems',
+        webURL: 'https://parsons-problems.netlify.app',
+    },
+    {
         date: 'April 2021',
         description: 'a micromaterial to practice reading and understanding cron expressions',
         focus: 'Cron expressions',
@@ -109,7 +121,7 @@ export const techItemList = [
         projectName: 'cron-trigger',
         repoURL: GITHUB_BASE_URL + 'cron-trigger',
         webURL: 'https://cron-trigger.netlify.app',
-    }
+    },
 ];
 
 export const languageItemList = [
