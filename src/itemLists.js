@@ -6,10 +6,12 @@ import cakeModulePng from './img/portfolio/cake-module.png';
 import cakeModuleWebP from './img/portfolio/cake-module.webp';
 import cartoonBirdPng from './img/portfolio/cartoon_bird.smallest.png';
 import cartoonBirdWebP from './img/portfolio/cartoon_bird.smallest.webp';
-import cartoonBookWebP from './img/portfolio/cartoon_book.webp';
 import cartoonBookPng from './img/portfolio/cartoon_book.png';
-import foodPlateWebP from './img/portfolio/food-plate.smallest.webp';
+import cartoonBookWebP from './img/portfolio/cartoon_book.webp';
+import clockPng from './img/portfolio/clock.png';
+import clockWebP from './img/portfolio/clock.webp';
 import foodPlatePng from './img/portfolio/food-plate.smallest.png';
+import foodPlateWebP from './img/portfolio/food-plate.smallest.webp';
 import githubUserStatsPng from './img/portfolio/githubUserStats.png';
 import githubUserStatsWebP from './img/portfolio/githubUserStats.webp';
 import graphitPng from './img/portfolio/graphit.png';
@@ -18,16 +20,16 @@ import howFastPng from './img/portfolio/howfast_circle.png';
 import howFastWebP from './img/portfolio/howfast_circle.webp';
 import ipPng from './img/portfolio/ip.png';
 import ipWebP from './img/portfolio/ip.webp';
-import mergeAMaticWebP from './img/portfolio/merge-a-matic.webp';
 import mergeAMaticPng from './img/portfolio/merge-a-matic.png';
+import mergeAMaticWebP from './img/portfolio/merge-a-matic.webp';
 import minimalsPng from './img/portfolio/minimals.png';
 import minimalsWebP from './img/portfolio/minimals.webp';
 import netmaskBitsPng from './img/portfolio/netmask-bits.png';
 import netmaskBitsWebP from './img/portfolio/netmask-bits.webp';
 import pypobotPng from './img/portfolio/pypobot.png';
 import pypobotWebP from './img/portfolio/pypobot.webp';
-import rebasicWebP from './img/portfolio/rebasic.webp';
 import rebasicPng from './img/portfolio/rebasic.png';
+import rebasicWebP from './img/portfolio/rebasic.webp';
 import reflogPowerPng from './img/portfolio/reflog-power.png';
 import reflogPowerWebP from './img/portfolio/reflog-power.webp';
 import sentencePng from './img/portfolio/sentence.png';
@@ -96,6 +98,16 @@ export const techItemList = [
         projectName: 'submodz',
         repoURL: GITHUB_BASE_URL + 'submodz',
     },
+    {
+        date: 'April 2021',
+        description: 'a micromaterial to practice reading and understanding cron expressions',
+        focus: 'Cron expressions',
+        imageNamePng: clockPng,
+        imageNameWebP: clockWebP,
+        projectName: 'cron-trigger',
+        repoURL: GITHUB_BASE_URL + 'cron-trigger',
+        webURL: 'https://cron-trigger.netlify.app',
+    }
 ];
 
 export const languageItemList = [
