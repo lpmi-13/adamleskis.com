@@ -20,7 +20,12 @@ import lightWebP from '../img/portfolio/light.webp';
 import micPng from '../img/portfolio/mic.png';
 import micWebP from '../img/portfolio/mic.webp';
 
-import {techItemList, languageItemList, mathItemList, miscItemList, MISC } from '../itemLists'
+import {techItemList, languageItemList, mathItemList, miscItemList } from '../itemLists'
+
+const LANGUAGE = 'language';
+const MATH = 'math';
+const MISC = 'miscellaneous';
+const TECHNOLOGY = 'tech';
 
 const MainBody = () => {
 
@@ -64,6 +69,7 @@ const MainBody = () => {
                                   itemNumber={idx}
                                   key={projectName}
                                   onClick={handleOpenModal}
+                                  type={TECHNOLOGY}
                                   {...item}
                                 />
                             )
@@ -89,6 +95,7 @@ const MainBody = () => {
                                   key={projectName}
                                   itemNumber={idx}
                                   onClick={handleOpenModal}
+                                  type={LANGUAGE}
                                   {...item}
                                 />
                             )
@@ -113,6 +120,7 @@ const MainBody = () => {
                                   key={projectName}
                                   itemNumber={idx}
                                   onClick={handleOpenModal}
+                                  type={MATH}
                                   {...item}
                                 />
                             )
@@ -137,6 +145,7 @@ const MainBody = () => {
                                   key={projectName}
                                   itemNumber={idx}
                                   onClick={handleOpenModal}
+                                  type={MISC}
                                   {...item}
                                 />
                             )
