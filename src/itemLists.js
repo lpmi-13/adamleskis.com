@@ -36,6 +36,8 @@ import rebasicPng from './img/portfolio/rebasic.png';
 import rebasicWebP from './img/portfolio/rebasic.webp';
 import reflogPowerPng from './img/portfolio/reflog-power.png';
 import reflogPowerWebP from './img/portfolio/reflog-power.webp';
+import semverPng from './img/portfolio/semver.png';
+import semverWebP from './img/portfolio/semver.webp';
 import sentencePng from './img/portfolio/sentence.png';
 import sentenceWebP from './img/portfolio/sentence.webp';
 import stressMatchPng from './img/portfolio/stress-match-small.png';
@@ -121,6 +123,16 @@ export const techItemList = [
         projectName: 'cron-trigger',
         repoURL: GITHUB_BASE_URL + 'cron-trigger',
         webURL: 'https://cron-trigger.netlify.app',
+    },
+    {
+        date: 'May 2021',
+        description: 'a quick primer on what semantic version numbers mean and how to use them',
+        focus: 'Semantic versioning',
+        imageNamePng: semverPng,
+        imageNameWebP: semverWebP,
+        projectName: 'semver-questions',
+        repoURL: GITHUB_BASE_URL + 'semver-questions',
+        webURL: 'https://semver-questions.netlify.app',
     },
 ];
 
