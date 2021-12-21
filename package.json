@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start:headless": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp _headers build",
     "test": "react-scripts test",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
