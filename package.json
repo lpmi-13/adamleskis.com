@@ -12,14 +12,13 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "start:headless": "BROWSER=none react-scripts start",
-    "build": "react-scripts build && npm run post-build",
-    "post-build": "cp -r build/* docs",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
@@ -50,10 +49,10 @@
   "devDependencies": {
     "@testing-library/cypress": "^7.0.1",
     "axe-core": "^4.0.2",
-    "cypress": "^5.5.0",
+    "cypress": "^9.2.0",
     "cypress-axe": "^0.10.0",
     "gh-pages": "^3.1.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "start-server-and-test": "^1.12.6"
   }
 }
