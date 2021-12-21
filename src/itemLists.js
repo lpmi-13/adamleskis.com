@@ -243,7 +243,7 @@ export const miscItemList = [
         focus: 'Kubernetes',
         imageNamePng: k8sDOPng,
         imageNameWebP: k8sDOWebP,
-        projectName: 'K8s The Hard Way',
+        projectName: 'K8s The Hard Way - DO',
         repoURL: GITHUB_BASE_URL + 'kubernetes-the-hard-way-do',
     },
     {
