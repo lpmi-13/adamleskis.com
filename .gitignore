@@ -4,3 +4,6 @@ build
 # testing
 /cypress/screenshots
 /cypress/fixtures
+
+# image stuff
+*.xcf
