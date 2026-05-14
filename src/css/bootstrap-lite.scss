@@ -1,0 +1,289 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-lg-8,
+.col-lg-12 {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+  .col-lg-8 {
+    width: 66.66666667%;
+  }
+
+  .col-lg-4 {
+    width: 33.33333333%;
+  }
+
+  .col-lg-12 {
+    width: 100%;
+  }
+
+  .col-lg-offset-2 {
+    margin-left: 16.66666667%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.list-inline {
+  list-style: none;
+  margin-left: -5px;
+  padding-left: 0;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.navbar {
+  background-color: #f8f8f8;
+  border: 1px solid transparent;
+  min-height: 50px;
+  position: relative;
+}
+
+.navbar-fixed-top {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
+.navbar-brand {
+  display: block;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 15px;
+}
+
+.navbar-toggle {
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 8px 15px 8px 0;
+  padding: 9px 10px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #888;
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+.navbar-collapse {
+  border-top: 1px solid transparent;
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.navbar-nav {
+  margin: 7.5px -15px;
+}
+
+.navbar-nav > li > a {
+  display: block;
+  line-height: 20px;
+  padding: 10px 15px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-collapse {
+    border-top: 0;
+    display: flex;
+    justify-content: flex-end;
+    max-height: none;
+  }
+
+  .navbar-nav {
+    display: flex;
+    margin: 0;
+  }
+
+  .navbar-nav > li > a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+}
+
+.btn {
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-default {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+  color: #fff;
+}
+
+.modal {
+  bottom: 0;
+  display: none;
+  left: 0;
+  outline: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1050;
+}
+
+.modal.in {
+  display: block;
+}
+
+.visible-xs,
+.visible-sm {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm {
+    display: block !important;
+  }
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

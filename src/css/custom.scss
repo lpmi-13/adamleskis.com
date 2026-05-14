@@ -17,10 +17,10 @@ a, h1, h2, .star-light, section.success, span.skills {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  overflow: scroll;
+  overflow: auto;
 
   .modal-content {
-    min-height: 135%;
+    min-height: 100%;
   }
 }
 
@@ -38,10 +38,17 @@ h2 {
 }
 
 .navbar-collapse {
-  transition: all 1.3s;
+  transition: max-height 0.3s ease;
   max-height: 0;
-  .in {
-    min-height: 4em;
+}
+
+.navbar-collapse.in {
+  max-height: 24em;
+}
+
+@media (min-width: 768px) {
+  .navbar-collapse {
+    max-height: none;
   }
 }
 

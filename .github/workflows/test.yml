@@ -1,18 +1,18 @@
-name: run a11y tests
-# This workflow is triggered on pushes to the repository.
+name: test
 on: [push]
 
 jobs:
-  build:
-    # Job name is Greeting
-    name: A11y
-    # This job runs on Linux
+  test:
+    name: Build and Playwright
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
-      - run: npm install
+          node-version: "24.11.0"
+          cache: npm
+      - run: npm ci
+      - run: npm run playwright:install:ci
+      - run: npm run build
       - run: npm run test:headless

@@ -1,5 +1,10 @@
 node_modules
 build
+dist
+.npm-cache
+.playwright
+playwright-report
+test-results
 
 # testing
 /cypress/screenshots

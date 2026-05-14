@@ -2,56 +2,40 @@
   "name": "portfolio-update",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.11.0",
+    "npm": "11.6.1"
+  },
+  "packageManager": "npm@11.6.1",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.12",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^5.0.0",
-    "web-vitals": "^0.2.4"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:headless": "BROWSER=none react-scripts start",
-    "build": "react-scripts build && cp _headers build",
-    "test": "react-scripts test",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "test:cypress": "start-server-and-test start http://localhost:3000 cy:open",
-    "test:headless": "start-server-and-test start:headless http://localhost:3000 cy:run",
-    "docker:security": "docker run --rm -e SCAN_URL=\"http://$(ip -4 addr show docker0 | grep -Po 'inet \\K[\\d.]+'):3000\" lirantal/is-website-vulnerable:latest",
-    "test:security": "start-server-and-test start:headless http://localhost:3000 docker:security",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "vite --host 127.0.0.1",
+    "start:headless": "vite --host 127.0.0.1",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && PLAYWRIGHT_BROWSERS_PATH=.playwright playwright test",
+    "test:headed": "PLAYWRIGHT_BROWSERS_PATH=.playwright playwright test --headed",
+    "test:ui": "PLAYWRIGHT_BROWSERS_PATH=.playwright playwright test --ui",
+    "test:headless": "npm run test",
+    "playwright:install": "PLAYWRIGHT_BROWSERS_PATH=.playwright playwright install chromium",
+    "playwright:install:ci": "PLAYWRIGHT_BROWSERS_PATH=.playwright playwright install --with-deps chromium",
+    "docker:security": "docker run --rm --network=host -e SCAN_URL=\"http://127.0.0.1:5173\" lirantal/is-website-vulnerable:latest",
+    "test:security": "start-server-and-test start:headless http://127.0.0.1:5173 docker:security"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^8.0.3",
-    "axe-core": "^4.0.2",
-    "cypress": "^10.0.0",
-    "cypress-axe": "^1.0.0",
-    "node-sass": "^7.0.0",
-    "start-server-and-test": "^1.12.6"
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^24.11.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "sass": "^1.99.0",
+    "start-server-and-test": "^3.0.5",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.13"
   }
 }
