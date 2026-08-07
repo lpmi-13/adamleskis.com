@@ -46,3 +46,39 @@ test('opens and closes project details with React state', async ({ page }) => {
   await page.keyboard.press('Escape');
   await expect(dialog).not.toBeVisible();
 });
+
+test('lists new projects in their intended sections', async ({ page }) => {
+  await page.goto('/');
+
+  const technologySection = page.locator('#technology');
+  await expect(technologySection.getByRole('heading', { name: 'OSI Viz' })).toBeVisible();
+  await expect(technologySection.getByRole('heading', { name: 'ports ≠ sockets' })).toBeVisible();
+
+  const languageSection = page.locator('#language');
+  await expect(languageSection.getByRole('heading', { name: 'Thai phrase tones' })).toBeVisible();
+  await expect(languageSection.getByRole('heading', { name: 'Thai word slice' })).toBeVisible();
+  await expect(languageSection.getByRole('heading', { name: 'stress maze' })).toBeVisible();
+});
+
+test('updated projects link to their current live sites', async ({ page }) => {
+  await page.goto('/');
+
+  const updatedProjects = [
+    { name: 'sentence factory', url: 'https://sentencefactory.netlify.app' },
+    { name: 'Touchwords', url: 'https://touchwords.netlify.app' },
+    { name: 'A(n)Writing', url: 'https://anwriting.netlify.app' },
+    { name: 'A(n)Redd', url: 'https://anredd.netlify.app' },
+    { name: 'A(n)Tweet', url: 'https://antweet.netlify.app' },
+  ];
+
+  for (const project of updatedProjects) {
+    await page.getByRole('button', { name: `Open ${project.name} details` }).click();
+
+    const dialog = page.getByRole('dialog', { name: project.name });
+    const liveLink = dialog.getByRole('link', { name: project.url });
+    await expect(liveLink).toHaveAttribute('href', project.url);
+
+    await page.keyboard.press('Escape');
+    await expect(dialog).not.toBeVisible();
+  }
+});

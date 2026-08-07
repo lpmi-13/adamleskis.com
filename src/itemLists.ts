@@ -1,10 +1,10 @@
 import apiWebP from "./img/portfolio/api.webp";
+import anreddWebP from "./img/portfolio/anredd.webp";
+import antweetWebP from "./img/portfolio/antweet.webp";
+import anwritingWebP from "./img/portfolio/anwriting.webp";
 import convoWebP from "./img/portfolio/convo.webp";
 import cakeModuleWebP from "./img/portfolio/cake-module.webp";
-import cartoonBirdWebP from "./img/portfolio/cartoon_bird.smallest.webp";
-import cartoonBookWebP from "./img/portfolio/cartoon_book.webp";
 import clockWebP from "./img/portfolio/clock.webp";
-import foodPlateWebP from "./img/portfolio/food-plate.smallest.webp";
 import githubUserStatsWebP from "./img/portfolio/githubUserStats.webp";
 import graphitWebP from "./img/portfolio/graphit.webp";
 import howFastWebP from "./img/portfolio/howfast_circle.webp";
@@ -13,15 +13,20 @@ import k8sDOWebP from "./img/portfolio/k8sDO.webp";
 import mergeAMaticWebP from "./img/portfolio/merge-a-matic.webp";
 import minimalsWebP from "./img/portfolio/minimals.webp";
 import netmaskBitsWebP from "./img/portfolio/netmask-bits.webp";
+import osiVizWebP from "./img/portfolio/osi-viz.webp";
 import parsonsWebP from "./img/portfolio/parsons.webp";
+import portsAndSocketsWebP from "./img/portfolio/ports-and-sockets.webp";
 import pypobotWebP from "./img/portfolio/pypobot.webp";
 import rebasicWebP from "./img/portfolio/rebasic.webp";
 import reflogPowerWebP from "./img/portfolio/reflog-power.webp";
 import sadPodsWebP from "./img/portfolio/sadpods-smallest.webp";
 import semverWebP from "./img/portfolio/semver.webp";
-import sentenceWebP from "./img/portfolio/sentence.webp";
+import sentenceFactoryWebP from "./img/portfolio/sentence-factory.webp";
+import stressMazeWebP from "./img/portfolio/stress-maze.webp";
 import stressMatchWebP from "./img/portfolio/stress-match-small.webp";
-import wordsWebP from "./img/portfolio/words.webp";
+import toneVizWebP from "./img/portfolio/tone-viz.webp";
+import touchwordsWebP from "./img/portfolio/touchwords.webp";
+import wordSliceWebP from "./img/portfolio/word-slice.webp";
 
 const GITHUB_BASE_URL = "https://github.com/lpmi-13/";
 
@@ -128,9 +133,59 @@ export const techItemList: PortfolioItemData[] = [
     imageNameWebP: sadPodsWebP,
     projectName: "sadpods",
   },
+  {
+    date: "July 2026",
+    description:
+      "An interactive visualization that makes network encapsulation visible by showing how HTTP data is wrapped in TLS, TCP, IP, and VXLAN metadata. Learners can inspect each layer and step through a request being wrapped and unwrapped.",
+    focus: "JavaScript + TCP/IP encapsulation",
+    imageNameWebP: osiVizWebP,
+    projectName: "OSI Viz",
+    repoURL: GITHUB_BASE_URL + "osi-viz",
+    webURL: "https://osi-viz.netlify.app",
+  },
+  {
+    date: "July 2026",
+    description:
+      "An interactive explainer for the difference between ports, kernel sockets, and process file descriptors. Learners can follow either side of an nginx connection and explore what happens when the server reaches its file-descriptor limit.",
+    focus: "TypeScript + TCP sockets + Linux",
+    imageNameWebP: portsAndSocketsWebP,
+    projectName: "ports ≠ sockets",
+    repoURL: GITHUB_BASE_URL + "ports-and-sockets",
+    webURL: "https://ports-and-sockets.netlify.app",
+  },
 ];
 
 export const languageItemList: PortfolioItemData[] = [
+  {
+    date: "June 2026",
+    description:
+      "A local-first browser app for listening to and reproducing pitch relationships across complete Thai phrases. Learners can compare their own recording with contextual reference audio and phrase-relative pitch contours, with all analysis kept in the browser.",
+    focus: "TypeScript + Web Audio + Thai phrase tones",
+    imageNameWebP: toneVizWebP,
+    projectName: "Thai phrase tones",
+    repoURL: GITHUB_BASE_URL + "tone-viz",
+    webURL: "https://tone-viz.netlify.app",
+  },
+  {
+    date: "April 2026",
+    description:
+      "A factory-themed slicing game for practising Thai word boundaries. Learners cut moving phrases at valid boundaries across six levels built from a 500-entry, beginner-to-intermediate corpus.",
+    focus: "JavaScript + Thai word segmentation",
+    imageNameWebP: wordSliceWebP,
+    projectName: "Thai word slice",
+    repoURL: GITHUB_BASE_URL + "word-slice",
+    webURL: "https://word-slice.netlify.app",
+  },
+  {
+    date: "March 2026",
+    description:
+      "A hex-grid maze for practising English word stress with academic vocabulary. Learners trace a contiguous path of words that matches a target stress pattern.",
+    focus: "JavaScript + Academic Word List + word stress",
+    imageNameWebP: stressMazeWebP,
+    projectName: "stress maze",
+    repoURL: GITHUB_BASE_URL + "stress-maze",
+    webURL: "https://stress-maze.netlify.app",
+  },
   {
     date: "September 2019",
     description:
@@ -153,11 +208,12 @@ export const languageItemList: PortfolioItemData[] = [
   {
     date: "March 2017",
     description:
-      "A game intended as a way for students to practice revising contextualized writing for various features (eg, past participles, plural nouns, possessives). Students check sentences as they come down the production line and tap those that need to be corrected. Current functionality allows for identification, but future work will involve actual correction of forms. Here's a link to the game",
-    focus: "Reddit API + Flask + PhaserJS",
-    imageNameWebP: sentenceWebP,
+      "An English-learning game for noticing incorrect verb forms in context. Learners find a verb reset to its lemma as each sentence moves along a production line, then compare it with the original form across simple-past, -ing, and past-participle shifts.",
+    focus: "TypeScript + Universal Dependencies corpus + verb forms",
+    imageNameWebP: sentenceFactoryWebP,
     projectName: "sentence factory",
     repoURL: GITHUB_BASE_URL + "sentencefactory",
+    webURL: "https://sentencefactory.netlify.app",
   },
   {
     date: "November 2016",
@@ -180,40 +236,42 @@ export const languageItemList: PortfolioItemData[] = [
   {
     date: "August 2016",
     description:
-      "A web game to practice identifying and correcting overgeneralized -ed suffixes on irregular simple past verbs. In the regular levels, just identify the verbs that have been overgeneralized to have -ed past tense forms. In the bonus round, students need to type in the correct irregular past tense.",
-    focus: "Reddit API + Flask + PhaserJS",
-    imageNameWebP: wordsWebP,
-    projectName: "touchwords",
+      "A visual game for practising irregular past-tense forms. Learners tap incorrectly regularised verbs while avoiding genuine regular verbs, then type the correct forms in a timed correction round.",
+    focus: "JavaScript + irregular past tense",
+    imageNameWebP: touchwordsWebP,
+    projectName: "Touchwords",
     repoURL: GITHUB_BASE_URL + "touchwords",
-    webURL: "https://grammarbuffet.org/touchwords",
+    webURL: "https://touchwords.netlify.app",
   },
   {
     date: "April 2016",
     description:
-      "A web application created as a demonstration of a Micro-material for English language learning. Automatically generates materials at two different difficulty levels from up-to-date public internet resources. Targets revision of articles (a/an/the) in written English in three different genres: Business journalism, Academic abstracts, and short Fiction stories.",
-    focus: "Web scraping + search APIs + Node + Angular",
-    imageNameWebP: foodPlateWebP,
-    projectName: "anwriting",
+      "A genre-based proofreading studio for practising a, an, and the in fiction, academic, and business writing. Guided mode offers inline choices, while Editor mode asks learners to restore every article in an editable draft.",
+    focus: "TypeScript + English articles + proofreading",
+    imageNameWebP: anwritingWebP,
+    projectName: "A(n)Writing",
     repoURL: GITHUB_BASE_URL + "anwriting",
-    webURL: "https://anwriting.herokuapp.com",
+    webURL: "https://anwriting.netlify.app",
   },
   {
     date: "July 2015",
     description:
-      "A project focused on assisting students with sensitising themselves to article (a/an/the) usage in fiction writing. Uses real-time data from The Writing Prompts Sub-Reddit to compile the materials.",
-    focus: "Reddit API + Node + jQuery",
-    imageNameWebP: cartoonBookWebP,
-    projectName: "anredd",
+      "An English article practice app built around complete, attributed Wikipedia paragraphs. Learners search by topic and restore every missing a, an, and the in either guided or hard mode.",
+    focus: "TypeScript + Wikipedia API + English articles",
+    imageNameWebP: anreddWebP,
+    projectName: "A(n)Redd",
     repoURL: GITHUB_BASE_URL + "anredd",
+    webURL: "https://anredd.netlify.app",
   },
   {
     date: "June 2015",
     description:
-      "A project using real-time data from Twitter to help students practise using articles (a/an/the) in short authentic texts.",
-    focus: "Twitter Search API + Node + jQuery",
-    imageNameWebP: cartoonBirdWebP,
-    projectName: "antweet",
+      "An English article practice app built around attributed Tatoeba sentences. Learners search by topic and restore one missing a, an, or the in balanced sets of short, authentic examples.",
+    focus: "TypeScript + Tatoeba API + English articles",
+    imageNameWebP: antweetWebP,
+    projectName: "A(n)Tweet",
     repoURL: GITHUB_BASE_URL + "antweet",
+    webURL: "https://antweet.netlify.app",
   },
 ];
 
