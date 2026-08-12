@@ -51,6 +51,8 @@ test('lists new projects in their intended sections', async ({ page }) => {
   await page.goto('/');
 
   const technologySection = page.locator('#technology');
+  await expect(technologySection.getByRole('heading', { name: 'use-tool' })).toBeVisible();
+  await expect(technologySection.getByRole('heading', { name: 'use-practice' })).toBeVisible();
   await expect(technologySection.getByRole('heading', { name: 'OSI Viz' })).toBeVisible();
   await expect(technologySection.getByRole('heading', { name: 'ports ≠ sockets' })).toBeVisible();
 
@@ -58,6 +60,18 @@ test('lists new projects in their intended sections', async ({ page }) => {
   await expect(languageSection.getByRole('heading', { name: 'Thai phrase tones' })).toBeVisible();
   await expect(languageSection.getByRole('heading', { name: 'Thai word slice' })).toBeVisible();
   await expect(languageSection.getByRole('heading', { name: 'stress maze' })).toBeVisible();
+});
+
+test('places the newest portfolio additions at the end of the technology grid', async ({ page }) => {
+  await page.goto('/');
+
+  const projectNames = await page.locator('#technology .portfolio-item h3').allTextContents();
+  expect(projectNames.slice(-4)).toEqual([
+    'OSI Viz',
+    'ports ≠ sockets',
+    'use-tool',
+    'use-practice',
+  ]);
 });
 
 test('updated projects link to their current live sites', async ({ page }) => {
@@ -81,4 +95,22 @@ test('updated projects link to their current live sites', async ({ page }) => {
     await page.keyboard.press('Escape');
     await expect(dialog).not.toBeVisible();
   }
+});
+
+test('new USE projects expose their repository and playground links', async ({ page }) => {
+  await page.goto('/');
+
+  await page.getByRole('button', { name: 'Open use-tool details' }).click();
+  const toolDialog = page.getByRole('dialog', { name: 'use-tool' });
+  await expect(toolDialog.getByRole('link', { name: 'https://github.com/lpmi-13/use-tool' }))
+    .toHaveAttribute('href', 'https://github.com/lpmi-13/use-tool');
+  await page.keyboard.press('Escape');
+
+  await page.getByRole('button', { name: 'Open use-practice details' }).click();
+  const practiceDialog = page.getByRole('dialog', { name: 'use-practice' });
+  await expect(practiceDialog.getByRole('link', { name: 'https://github.com/lpmi-13/use-practice' }))
+    .toHaveAttribute('href', 'https://github.com/lpmi-13/use-practice');
+  const playgroundUrl = 'https://labs.iximiuz.com/playgrounds/use-practice-4ce4816f';
+  await expect(practiceDialog.getByRole('link', { name: playgroundUrl }))
+    .toHaveAttribute('href', playgroundUrl);
 });

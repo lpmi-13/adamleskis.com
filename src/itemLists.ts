@@ -26,6 +26,8 @@ import stressMazeWebP from "./img/portfolio/stress-maze.webp";
 import stressMatchWebP from "./img/portfolio/stress-match-small.webp";
 import toneVizWebP from "./img/portfolio/tone-viz.webp";
 import touchwordsWebP from "./img/portfolio/touchwords.webp";
+import usePracticeWebP from "./img/portfolio/use-practice.webp";
+import useToolWebP from "./img/portfolio/use-tool.webp";
 import wordSliceWebP from "./img/portfolio/word-slice.webp";
 
 const GITHUB_BASE_URL = "https://github.com/lpmi-13/";
@@ -152,6 +154,25 @@ export const techItemList: PortfolioItemData[] = [
     projectName: "ports ≠ sockets",
     repoURL: GITHUB_BASE_URL + "ports-and-sockets",
     webURL: "https://ports-and-sockets.netlify.app",
+  },
+  {
+    date: "June 2026",
+    description:
+      "A terminal learning harness for practising Brendan Gregg's USE method on a live Linux system. Guided walkthroughs and free-form practice cover CPU, memory, disk I/O, and networking, then ask learners to interpret the captured evidence and diagnose utilization, saturation, and errors.",
+    focus: "Go + Linux performance + USE method",
+    imageNameWebP: useToolWebP,
+    projectName: "use-tool",
+    repoURL: GITHUB_BASE_URL + "use-tool",
+  },
+  {
+    date: "June 2026",
+    description:
+      "Hands-on Linux performance investigation scenarios running in disposable iximiuz Labs VMs. Randomized CPU, memory, disk, and network workloads hide one problematic service among realistic baselines, so learners must find it from system signals rather than process names.",
+    focus: "Go + Rust + Linux performance + iximiuz Labs",
+    imageNameWebP: usePracticeWebP,
+    projectName: "use-practice",
+    repoURL: GITHUB_BASE_URL + "use-practice",
+    webURL: "https://labs.iximiuz.com/playgrounds/use-practice-4ce4816f",
   },
 ];
 
