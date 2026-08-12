@@ -1,8 +1,6 @@
-import apiWebP from "./img/portfolio/api.webp";
 import anreddWebP from "./img/portfolio/anredd.webp";
 import antweetWebP from "./img/portfolio/antweet.webp";
 import anwritingWebP from "./img/portfolio/anwriting.webp";
-import convoWebP from "./img/portfolio/convo.webp";
 import cakeModuleWebP from "./img/portfolio/cake-module.webp";
 import clockWebP from "./img/portfolio/clock.webp";
 import githubUserStatsWebP from "./img/portfolio/githubUserStats.webp";
@@ -237,24 +235,6 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://sentencefactory.netlify.app",
   },
   {
-    date: "November 2016",
-    description:
-      "This is an API to serve text content together with parts of speech and lemma tags. It currently uses content from the writing prompts subreddit stored in a database. Right now it's only text-based resources served, but future plans include serving audio resources. For more specific implementation details, check out the documentation with example endpoints, query parameters, and responses. Many thanks to Rich Douglas for his invaluable help in creating this API.",
-    focus: "Reddit API + Flask + MongoDB",
-    imageNameWebP: apiWebP,
-    projectName: "micromaterials API",
-    repoURL: GITHUB_BASE_URL + "micromaterials-api",
-  },
-  {
-    date: "September 2016",
-    description:
-      "An app developed to scaffold turn-taking in academic discussion exercises. Students are able to use the interface to signal when they would like to interject, and group members receive notifications along with helpful ways to yield the floor.",
-    focus: "Node + Pusher + jQuery",
-    imageNameWebP: convoWebP,
-    projectName: "convo helper",
-    repoURL: GITHUB_BASE_URL + "convohelper",
-  },
-  {
     date: "August 2016",
     description:
       "A visual game for practising irregular past-tense forms. Learners tap incorrectly regularised verbs while avoiding genuine regular verbs, then type the correct forms in a timed correction round.",
@@ -321,8 +301,8 @@ export const miscItemList: PortfolioItemData[] = [
   {
     date: "April 2020",
     description:
-      "This is a fun project using data from Wikipedia to determine how many countries' national records in athletics the user is faster than. Just input your time and find out.",
-    focus: "Web scraping + Python + React + D3",
+      "A static browser app that compares a runner's time with senior outdoor national athletics records from around the world. Learners can explore every country they are faster than on an interactive map, with an attributed Wikipedia snapshot refreshed at build time.",
+    focus: "TypeScript + Vite + Wikipedia ingestion + d3-geo",
     imageNameWebP: howFastWebP,
     projectName: "how fast am I?",
     repoURL: GITHUB_BASE_URL + "howfast",

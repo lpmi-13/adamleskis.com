@@ -74,6 +74,15 @@ test('places the newest portfolio additions at the end of the technology grid', 
   ]);
 });
 
+test('describes how fast am I as a static TypeScript app', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Open how fast am I? details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'how fast am I?' });
+  await expect(dialog).toContainText('TypeScript + Vite + Wikipedia ingestion + d3-geo');
+  await expect(dialog).toContainText('interactive map');
+});
+
 test('updated projects link to their current live sites', async ({ page }) => {
   await page.goto('/');
 
