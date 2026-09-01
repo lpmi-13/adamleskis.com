@@ -9,6 +9,7 @@ type PortfolioModalProps = PortfolioItemData & {
 
 const PortfolioModal = (props: PortfolioModalProps) => {
   const {
+    altText,
     date,
     description,
     imageNameWebP,
@@ -28,7 +29,7 @@ const PortfolioModal = (props: PortfolioModalProps) => {
       <img
         src={imageNameWebP}
         className="img-responsive img-centered"
-        alt={projectName}
+        alt={altText}
         width="900"
         height="650"
         loading="lazy"

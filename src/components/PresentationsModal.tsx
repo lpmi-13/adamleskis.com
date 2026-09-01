@@ -2,18 +2,19 @@ import React from 'react';
 import ModalFrame from './ModalFrame';
 
 type PresentationsModalProps = {
+    altText: string;
     imageNameWebP: string;
     modalId: string;
     onClose: () => void;
 };
 
-const PresentationsModal = ({ imageNameWebP, modalId, onClose}: PresentationsModalProps) => {
+const PresentationsModal = ({ altText, imageNameWebP, modalId, onClose}: PresentationsModalProps) => {
     return (
         <ModalFrame modalId={modalId} onClose={onClose} title="Talks">
             <img
               src={imageNameWebP}
               className="img-responsive img-centered"
-              alt="presentations"
+              alt={altText}
               width="900"
               height="650"
               loading="lazy"

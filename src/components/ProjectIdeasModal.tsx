@@ -2,18 +2,19 @@ import React from 'react';
 import ModalFrame from './ModalFrame';
 
 type ProjectIdeasModalProps = {
+    altText: string;
     imageNameWebP: string;
     modalId: string;
     onClose: () => void;
 };
 
-const ProjectIdeasModal = ({ imageNameWebP, modalId, onClose }: ProjectIdeasModalProps) => {
+const ProjectIdeasModal = ({ altText, imageNameWebP, modalId, onClose }: ProjectIdeasModalProps) => {
     return (
         <ModalFrame modalId={modalId} onClose={onClose} title="Project Ideas">
             <img
               src={imageNameWebP}
               className="img-responsive img-centered"
-              alt="current ideas"
+              alt={altText}
               width="900"
               height="650"
               loading="lazy"

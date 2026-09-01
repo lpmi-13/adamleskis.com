@@ -11,7 +11,7 @@ const Header = () => {
                         <img
                           className="img-responsive"
                           src={profileWebP}
-                          alt="avatar"
+                          alt="Cartoon portrait of Adam Leskis wearing a yellow hard hat and striped tie"
                           width="256"
                           height="256"
                           decoding="async"

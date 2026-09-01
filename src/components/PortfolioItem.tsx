@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type PortfolioItemProps = {
-    altText?: string;
+    altText: string;
     imageNameWebP: string;
     modalId: string;
     onOpen: (modalId: string) => void;
@@ -33,7 +33,7 @@ const PortfolioItem = ({
                 <img
                   src={imageNameWebP}
                   className="img-responsive"
-                  alt={altText || projectName}
+                  alt={altText}
                   width="900"
                   height="650"
                   loading="lazy"

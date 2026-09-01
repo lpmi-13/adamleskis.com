@@ -17,6 +17,7 @@ import portsAndSocketsWebP from "./img/portfolio/ports-and-sockets.webp";
 import pypobotWebP from "./img/portfolio/pypobot.webp";
 import rebasicWebP from "./img/portfolio/rebasic.webp";
 import reflogPowerWebP from "./img/portfolio/reflog-power.webp";
+import rhymeMatchWebP from "./img/portfolio/rhyme-match.webp";
 import sadPodsWebP from "./img/portfolio/sadpods-smallest.webp";
 import semverWebP from "./img/portfolio/semver.webp";
 import sentenceFactoryWebP from "./img/portfolio/sentence-factory.webp";
@@ -31,6 +32,7 @@ import wordSliceWebP from "./img/portfolio/word-slice.webp";
 const GITHUB_BASE_URL = "https://github.com/lpmi-13/";
 
 export type PortfolioItemData = {
+  altText: string;
   date: string;
   description: string;
   focus: string;
@@ -42,6 +44,8 @@ export type PortfolioItemData = {
 
 export const techItemList: PortfolioItemData[] = [
   {
+    altText:
+      "Overhead photograph of pedestrians casting long shadows as they move in different directions",
     date: "October 2018",
     description:
       "A command line micromaterial for users to practice rebasing to remove unneeded commit messages",
@@ -51,6 +55,8 @@ export const techItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "rebasic",
   },
   {
+    altText:
+      "Git branch diagram with three connected nodes inside an orange circle",
     date: "November 2018",
     description:
       "A command line micromaterial for users to practice resolving merge conflicts",
@@ -60,6 +66,7 @@ export const techItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "merge-a-matic",
   },
   {
+    altText: "A hand rising beside a gravestone labelled 9cdc824",
     date: "February 2019",
     description:
       "A command line micromaterial to practice bringing deleted branches back from the dead with the power of the reflog",
@@ -69,6 +76,8 @@ export const techItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "reflog-power",
   },
   {
+    altText:
+      "IPinder game classifying 192.168.1.42 as a private-range address",
     date: "January 2020",
     description:
       "A browser-based micromaterial to practice identifying public and private IP addresses",
@@ -79,6 +88,8 @@ export const techItemList: PortfolioItemData[] = [
     webURL: "https://ipinder.netlify.app",
   },
   {
+    altText:
+      "Netmask Slider showing a /24 subnet with 256 addresses and 254 usable hosts",
     date: "March 2020",
     description:
       "a simple micromaterial to practice visualizing the effects of netmasks on subnets",
@@ -89,6 +100,7 @@ export const techItemList: PortfolioItemData[] = [
     webURL: "https://netmask-slider.netlify.app",
   },
   {
+    altText: "Sliced bundt cake with one slice labelled 4a1d578",
     date: "July 2020",
     description: "a micromaterial to practice updating a git submodule",
     focus: "Git",
@@ -97,6 +109,7 @@ export const techItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "submodz",
   },
   {
+    altText: "Six staggered code-like lines inside a purple circle",
     date: "October 2020",
     description: "Using code from github to create parsons problems",
     focus: "code organization",
@@ -106,6 +119,7 @@ export const techItemList: PortfolioItemData[] = [
     webURL: "https://parsons-problems.netlify.app",
   },
   {
+    altText: "Analogue clock face with black hands and a red second hand",
     date: "April 2021",
     description:
       "a micromaterial to practice reading and understanding cron expressions",
@@ -116,6 +130,7 @@ export const techItemList: PortfolioItemData[] = [
     webURL: "https://cron-trigger.netlify.app",
   },
   {
+    altText: "Semantic version 4.2.1 labelled major, minor, and patch",
     date: "May 2021",
     description:
       "a quick primer on what semantic version numbers mean and how to use them",
@@ -126,6 +141,7 @@ export const techItemList: PortfolioItemData[] = [
     webURL: "https://semver-questions.netlify.app",
   },
   {
+    altText: "Sad face inside a blue Kubernetes-style pod icon",
     date: "August 2022",
     description:
       "a project to re-implement the great sadservers.com, but in Gitpod. They all have the format of https://github.com/lpmi-13/sadpods-* (eg, sadpods-webserver), so just search for them in my respositories",
@@ -134,6 +150,8 @@ export const techItemList: PortfolioItemData[] = [
     projectName: "sadpods",
   },
   {
+    altText:
+      "Colour-coded protocol layers wrapped inside a dashed network boundary",
     date: "July 2026",
     description:
       "An interactive visualization that makes network encapsulation visible by showing how HTTP data is wrapped in TLS, TCP, IP, and VXLAN metadata. Learners can inspect each layer and step through a request being wrapped and unwrapped.",
@@ -144,6 +162,8 @@ export const techItemList: PortfolioItemData[] = [
     webURL: "https://osi-viz.netlify.app",
   },
   {
+    altText:
+      "Diagram connecting port 80 to a TCP socket and file descriptor 4",
     date: "July 2026",
     description:
       "An interactive explainer for the difference between ports, kernel sockets, and process file descriptors. Learners can follow either side of an nginx connection and explore what happens when the server reaches its file-descriptor limit.",
@@ -154,6 +174,8 @@ export const techItemList: PortfolioItemData[] = [
     webURL: "https://ports-and-sockets.netlify.app",
   },
   {
+    altText:
+      "USE dashboard with utilization, saturation, error, and system resource icons",
     date: "June 2026",
     description:
       "A terminal learning harness for practising Brendan Gregg's USE method on a live Linux system. Guided walkthroughs and free-form practice cover CPU, memory, disk I/O, and networking, then ask learners to interpret the captured evidence and diagnose utilization, saturation, and errors.",
@@ -163,6 +185,8 @@ export const techItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "use-tool",
   },
   {
+    altText:
+      "Linux laptop with six workload panels and a magnifying glass highlighting one anomaly",
     date: "June 2026",
     description:
       "Hands-on Linux performance investigation scenarios running in disposable iximiuz Labs VMs. Randomized CPU, memory, disk, and network workloads hide one problematic service among realistic baselines, so learners must find it from system signals rather than process names.",
@@ -176,6 +200,20 @@ export const techItemList: PortfolioItemData[] = [
 
 export const languageItemList: PortfolioItemData[] = [
   {
+    altText:
+      "Rhyme Match gameplay showing matched, missed, and unchecked word cards",
+    date: "September 2026",
+    description:
+      "An accessible arcade-style game for practising English rhymes. Learners choose an IPA-labelled reference word, find six words with the same final stressed sound among same-syllable distractors, and get immediate feedback across repeatable rounds.",
+    focus: "TypeScript + English rhymes + IPA + CMU Pronouncing Dictionary",
+    imageNameWebP: rhymeMatchWebP,
+    projectName: "Rhyme Match",
+    repoURL: GITHUB_BASE_URL + "rhyme-match-game",
+    webURL: "https://rhyme-match-game.netlify.app",
+  },
+  {
+    altText:
+      "Speaker and microphone icons beside reference and recorded pitch contours",
     date: "June 2026",
     description:
       "A local-first browser app for listening to and reproducing pitch relationships across complete Thai phrases. Learners can compare their own recording with contextual reference audio and phrase-relative pitch contours, with all analysis kept in the browser.",
@@ -186,6 +224,8 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://tone-viz.netlify.app",
   },
   {
+    altText:
+      "Thai phrase ฉันกินข้าว being split between words on a factory conveyor belt",
     date: "April 2026",
     description:
       "A factory-themed slicing game for practising Thai word boundaries. Learners cut moving phrases at valid boundaries across six levels built from a 500-entry, beginner-to-intermediate corpus.",
@@ -196,6 +236,7 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://word-slice.netlify.app",
   },
   {
+    altText: "Pink stress-pattern path traced across a dark hexagonal maze",
     date: "March 2026",
     description:
       "A hex-grid maze for practising English word stress with academic vocabulary. Learners trace a contiguous path of words that matches a target stress pattern.",
@@ -206,6 +247,8 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://stress-maze.netlify.app",
   },
   {
+    altText:
+      "Stress Match game matching constant with version by first-syllable stress",
     date: "September 2019",
     description:
       "A simple game to help learners focus on the stress in academic vocabulary.",
@@ -216,6 +259,8 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://stress-match.netlify.app",
   },
   {
+    altText:
+      "IPA transcriptions for bat, bet, and but arranged inside a yellow circle",
     date: "Feb 2018",
     description:
       "A project to generate minimal pair (eg, bat/bet) audio samples from TED talks on YouTube and present these to English language learners for discrimination practice",
@@ -225,6 +270,8 @@ export const languageItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "minimalPairGenerator",
   },
   {
+    altText:
+      "Sentence Factory game changing inspect to inspected on a conveyor belt",
     date: "March 2017",
     description:
       "An English-learning game for noticing incorrect verb forms in context. Learners find a verb reset to its lemma as each sentence moves along a production line, then compare it with the original form across simple-past, -ing, and past-participle shifts.",
@@ -235,6 +282,8 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://sentencefactory.netlify.app",
   },
   {
+    altText:
+      "Touchwords game with fixed, taked, and played floating among diamond targets",
     date: "August 2016",
     description:
       "A visual game for practising irregular past-tense forms. Learners tap incorrectly regularised verbs while avoiding genuine regular verbs, then type the correct forms in a timed correction round.",
@@ -245,6 +294,8 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://touchwords.netlify.app",
   },
   {
+    altText:
+      "Proofreading interface restoring a, an, and the in a fiction text",
     date: "April 2016",
     description:
       "A genre-based proofreading studio for practising a, an, and the in fiction, academic, and business writing. Guided mode offers inline choices, while Editor mode asks learners to restore every article in an editable draft.",
@@ -255,6 +306,8 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://anwriting.netlify.app",
   },
   {
+    altText:
+      "Article practice interface restoring a, an, and the in a search result about space",
     date: "July 2015",
     description:
       "An English article practice app built around complete, attributed Wikipedia paragraphs. Learners search by topic and restore every missing a, an, and the in either guided or hard mode.",
@@ -265,6 +318,8 @@ export const languageItemList: PortfolioItemData[] = [
     webURL: "https://anredd.netlify.app",
   },
   {
+    altText:
+      "Article exercise completing She packed question mark umbrella with an selected",
     date: "June 2015",
     description:
       "An English article practice app built around attributed Tatoeba sentences. Learners search by topic and restore one missing a, an, or the in balanced sets of short, authentic examples.",
@@ -278,6 +333,7 @@ export const languageItemList: PortfolioItemData[] = [
 
 export const mathItemList: PortfolioItemData[] = [
   {
+    altText: "Integral and x symbols inside a graphing frame",
     date: "April 2019",
     description:
       "This is an attempt to make it easier to just physically draw a graph and then see what the equation is for that graph.",
@@ -291,6 +347,7 @@ export const mathItemList: PortfolioItemData[] = [
 
 export const miscItemList: PortfolioItemData[] = [
   {
+    altText: "Kubernetes and DigitalOcean logos joined by a plus sign",
     date: "June 2021",
     description: "An adaptation of Kubernetes The Hardway on Digital Ocean.",
     focus: "Kubernetes",
@@ -299,6 +356,7 @@ export const miscItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "kubernetes-the-hard-way-do",
   },
   {
+    altText: "Silhouette of a person sprinting with motion lines",
     date: "April 2020",
     description:
       "A static browser app that compares a runner's time with senior outdoor national athletics records from around the world. Learners can explore every country they are faster than on an interactive map, with an attributed Wikipedia snapshot refreshed at build time.",
@@ -309,6 +367,7 @@ export const miscItemList: PortfolioItemData[] = [
     webURL: "https://howfastami.netlify.app",
   },
   {
+    altText: "Close-up of a green python coiled inside a black circle",
     date: "July 2017",
     description:
       "A simple python command line utility to find typos in github readmes, then automatically submit pull requests to fix them.",
@@ -318,6 +377,7 @@ export const miscItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "pypobot",
   },
   {
+    altText: "Pie and bar charts representing GitHub contribution statistics",
     date: "January 2019",
     description:
       "This emerged from an idea about a different way to measure contributions to open source software. Instead of counting total commits, it only counts unique PR's merged to repos not owned by the user.",

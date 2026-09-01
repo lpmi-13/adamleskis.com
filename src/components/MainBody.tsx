@@ -44,7 +44,7 @@ type PortfolioEntry = PortfolioItemData & {
 };
 
 type SpecialEntry = {
-    altText?: string;
+    altText: string;
     imageNameWebP: string;
     modalId: string;
     projectName: string;
@@ -97,13 +97,14 @@ const MainBody = () => {
 
     const specialEntries = useMemo<SpecialEntry[]>(() => [
         {
+            altText: 'Black outline of a glowing light bulb',
             imageNameWebP: lightWebP,
             modalId: getModalId(MISC, miscItemList.length),
             projectName: 'project ideas',
             type: 'projectIdeas',
         },
         {
-            altText: 'presentations',
+            altText: 'Black handheld microphone inside a white circle',
             imageNameWebP: micWebP,
             modalId: getModalId(MISC, miscItemList.length + 1),
             projectName: 'presentations',
@@ -200,6 +201,7 @@ const MainBody = () => {
         )}
         {activeSpecial?.type === 'projectIdeas' && (
             <ProjectIdeasModal
+              altText={activeSpecial.altText}
               imageNameWebP={activeSpecial.imageNameWebP}
               modalId={activeSpecial.modalId}
               onClose={handleCloseModal}
@@ -207,6 +209,7 @@ const MainBody = () => {
         )}
         {activeSpecial?.type === 'presentations' && (
             <PresentationsModal
+              altText={activeSpecial.altText}
               imageNameWebP={activeSpecial.imageNameWebP}
               modalId={activeSpecial.modalId}
               onClose={handleCloseModal}

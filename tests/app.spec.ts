@@ -47,6 +47,31 @@ test('opens and closes project details with React state', async ({ page }) => {
   await expect(dialog).not.toBeVisible();
 });
 
+test('provides descriptive alt text for every image', async ({ page }) => {
+  await page.goto('/');
+
+  const altTexts = await page.locator('img').evaluateAll((images) => (
+    images.map((image) => image.getAttribute('alt')?.trim() ?? '')
+  ));
+
+  expect(altTexts.length).toBeGreaterThan(0);
+  expect(altTexts.filter((altText) => altText.length < 10)).toEqual([]);
+  expect(altTexts).not.toContain('avatar');
+  expect(altTexts).not.toContain('current ideas');
+  expect(altTexts).not.toContain('presentations');
+
+  await page.getByRole('button', { name: 'Open project ideas details' }).click();
+  await expect(page.getByRole('dialog', { name: 'Project Ideas' }).getByRole('img', {
+    name: 'Black outline of a glowing light bulb',
+  })).toBeVisible();
+  await page.keyboard.press('Escape');
+
+  await page.getByRole('button', { name: 'Open presentations details' }).click();
+  await expect(page.getByRole('dialog', { name: 'Talks' }).getByRole('img', {
+    name: 'Black handheld microphone inside a white circle',
+  })).toBeVisible();
+});
+
 test('lists new projects in their intended sections', async ({ page }) => {
   await page.goto('/');
 
@@ -57,9 +82,33 @@ test('lists new projects in their intended sections', async ({ page }) => {
   await expect(technologySection.getByRole('heading', { name: 'ports ≠ sockets' })).toBeVisible();
 
   const languageSection = page.locator('#language');
+  await expect(languageSection.getByRole('heading', { name: 'Rhyme Match' })).toBeVisible();
   await expect(languageSection.getByRole('heading', { name: 'Thai phrase tones' })).toBeVisible();
   await expect(languageSection.getByRole('heading', { name: 'Thai word slice' })).toBeVisible();
   await expect(languageSection.getByRole('heading', { name: 'stress maze' })).toBeVisible();
+});
+
+test('presents the revamped Rhyme Match game with current project links', async ({ page }) => {
+  await page.goto('/');
+
+  const languageSection = page.locator('#language');
+  const rhymeMatchItem = languageSection.locator('.portfolio-item').first();
+  await expect(rhymeMatchItem.getByRole('heading', { name: 'Rhyme Match' })).toBeVisible();
+  await expect(rhymeMatchItem.getByRole('img', {
+    name: 'Rhyme Match gameplay showing matched, missed, and unchecked word cards',
+  }))
+    .toHaveAttribute('src', /rhyme-match/);
+
+  await rhymeMatchItem.getByRole('button', { name: 'Open Rhyme Match details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'Rhyme Match' });
+  await expect(dialog).toContainText('same final stressed sound');
+  await expect(dialog.getByRole('link', {
+    name: 'https://github.com/lpmi-13/rhyme-match-game',
+  })).toHaveAttribute('href', 'https://github.com/lpmi-13/rhyme-match-game');
+  await expect(dialog.getByRole('link', {
+    name: 'https://rhyme-match-game.netlify.app',
+  })).toHaveAttribute('href', 'https://rhyme-match-game.netlify.app');
 });
 
 test('places the newest portfolio additions at the end of the technology grid', async ({ page }) => {
