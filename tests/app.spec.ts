@@ -92,10 +92,12 @@ test('presents the revamped Rhyme Match game with current project links', async 
   await page.goto('/');
 
   const languageSection = page.locator('#language');
-  const rhymeMatchItem = languageSection.locator('.portfolio-item').first();
+  const rhymeMatchItem = languageSection.locator('.portfolio-item').filter({
+    has: page.getByRole('heading', { name: 'Rhyme Match' }),
+  });
   await expect(rhymeMatchItem.getByRole('heading', { name: 'Rhyme Match' })).toBeVisible();
   await expect(rhymeMatchItem.getByRole('img', {
-    name: 'Rhyme Match gameplay showing matched, missed, and unchecked word cards',
+    name: 'Abstract word cards linked by a shared waveform, with one contrasting card',
   }))
     .toHaveAttribute('src', /rhyme-match/);
 

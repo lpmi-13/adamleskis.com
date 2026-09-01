@@ -201,18 +201,6 @@ export const techItemList: PortfolioItemData[] = [
 export const languageItemList: PortfolioItemData[] = [
   {
     altText:
-      "Rhyme Match gameplay showing matched, missed, and unchecked word cards",
-    date: "September 2026",
-    description:
-      "An accessible arcade-style game for practising English rhymes. Learners choose an IPA-labelled reference word, find six words with the same final stressed sound among same-syllable distractors, and get immediate feedback across repeatable rounds.",
-    focus: "TypeScript + English rhymes + IPA + CMU Pronouncing Dictionary",
-    imageNameWebP: rhymeMatchWebP,
-    projectName: "Rhyme Match",
-    repoURL: GITHUB_BASE_URL + "rhyme-match-game",
-    webURL: "https://rhyme-match-game.netlify.app",
-  },
-  {
-    altText:
       "Speaker and microphone icons beside reference and recorded pitch contours",
     date: "June 2026",
     description:
@@ -329,6 +317,18 @@ export const languageItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "antweet",
     webURL: "https://antweet.netlify.app",
   },
+  {
+    altText:
+      "Abstract word cards linked by a shared waveform, with one contrasting card",
+    date: "September 2026",
+    description:
+      "An accessible arcade-style game for practising English rhymes. Learners choose an IPA-labelled reference word, find six words with the same final stressed sound among same-syllable distractors, and get immediate feedback across repeatable rounds.",
+    focus: "TypeScript + English rhymes + IPA + CMU Pronouncing Dictionary",
+    imageNameWebP: rhymeMatchWebP,
+    projectName: "Rhyme Match",
+    repoURL: GITHUB_BASE_URL + "rhyme-match-game",
+    webURL: "https://rhyme-match-game.netlify.app",
+  }
 ];
 
 export const mathItemList: PortfolioItemData[] = [
