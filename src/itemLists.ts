@@ -213,7 +213,7 @@ export const languageItemList: PortfolioItemData[] = [
     imageNameWebP: stressMatchWebP,
     projectName: "stress match",
     repoURL: GITHUB_BASE_URL + "stress-match-game",
-    webURL: "https://grammarbuffet.org/stress-game",
+    webURL: "https://stress-match.netlify.app",
   },
   {
     date: "Feb 2018",
