@@ -3,6 +3,7 @@ import antweetWebP from "./img/portfolio/antweet.webp";
 import anwritingWebP from "./img/portfolio/anwriting.webp";
 import cakeModuleWebP from "./img/portfolio/cake-module.webp";
 import clockWebP from "./img/portfolio/clock.webp";
+import doomPerfWebP from "./img/portfolio/doom-perf.webp";
 import githubUserStatsWebP from "./img/portfolio/githubUserStats.webp";
 import graphitWebP from "./img/portfolio/graphit.webp";
 import howFastWebP from "./img/portfolio/howfast_circle.webp";
@@ -195,6 +196,18 @@ export const techItemList: PortfolioItemData[] = [
     projectName: "use-practice",
     repoURL: GITHUB_BASE_URL + "use-practice",
     webURL: "https://labs.iximiuz.com/playgrounds/use-practice-4ce4816f",
+  },
+  {
+    altText:
+      "Cartoon-style illustration of a Doom Perf room: a glowing green memory spire ringed with orange and blue, flanked by tall library shelves and a stone floor",
+    date: "September 2026",
+    description:
+      "A fork of a browser Doom port turned into a USE-methodology performance lab. CPU, memory, disk, and network utilization, saturation, and errors become explorable Doom rooms and live, engine-driven instruments, fed by a Go telemetry service that samples Linux /proc and /sys and streams it into the patched WebAssembly engine. Runs live in an iximiuz Labs playground with a bundled load generator for creating real host load.",
+    focus: "TypeScript + Go + WebAssembly + Doom + Linux performance + USE method",
+    imageNameWebP: doomPerfWebP,
+    projectName: "Doom Perf",
+    repoURL: GITHUB_BASE_URL + "doom-perf",
+    webURL: "https://labs.iximiuz.com/playgrounds/doom-perf-c0bd32e1",
   },
 ];
 
