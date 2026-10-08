@@ -97,7 +97,7 @@ test('presents the revamped Rhyme Match game with current project links', async 
   });
   await expect(rhymeMatchItem.getByRole('heading', { name: 'Rhyme Match' })).toBeVisible();
   await expect(rhymeMatchItem.getByRole('img', {
-    name: 'Abstract word cards linked by a shared waveform, with one contrasting card',
+    name: 'Word bars that all end in the same orange segment, except one ending in black',
   }))
     .toHaveAttribute('src', /rhyme-match/);
 
