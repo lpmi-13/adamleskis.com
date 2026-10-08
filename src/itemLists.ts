@@ -359,7 +359,8 @@ export const mathItemList: PortfolioItemData[] = [
     webURL: "https://mathbuffet.party",
   },
   {
-    altText: "Add Blocks illustration showing 34 + 25 as tens and ones blocks",
+    altText:
+      "Two ten-frames of blocks, with an arrow carrying a full frame of ones over to the tens",
     date: "October 2026",
     description:
       "An interactive place-value activity that represents two-, three-, and four-digit addition with blocks. Learners move the blocks together and see how groups of ten carry into the next column.",
@@ -370,7 +371,8 @@ export const mathItemList: PortfolioItemData[] = [
     webURL: "https://addblocks.netlify.app",
   },
   {
-    altText: "Percent Wheel illustration showing 5/8 as 62.5% on a shaded wheel",
+    altText:
+      "Wheel divided into eight outlined sections with five shaded and a drag handle on the edge",
     date: "October 2026",
     description:
       "An interactive wheel for exploring fractions as percentages. Learners can change the numerator or denominator, or drag around the wheel to adjust the shaded fraction and see its percentage.",
