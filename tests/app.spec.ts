@@ -117,11 +117,12 @@ test('places the newest portfolio additions at the end of the technology grid', 
   await page.goto('/');
 
   const projectNames = await page.locator('#technology .portfolio-item h3').allTextContents();
-  expect(projectNames.slice(-4)).toEqual([
+  expect(projectNames.slice(-5)).toEqual([
     'OSI Viz',
     'ports ≠ sockets',
     'use-tool',
     'use-practice',
+    'Doom Perf',
   ]);
 });
 

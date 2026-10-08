@@ -1,3 +1,4 @@
+import addBlocksWebP from "./img/portfolio/addblocks.webp";
 import anreddWebP from "./img/portfolio/anredd.webp";
 import antweetWebP from "./img/portfolio/antweet.webp";
 import anwritingWebP from "./img/portfolio/anwriting.webp";
@@ -14,6 +15,7 @@ import minimalsWebP from "./img/portfolio/minimals.webp";
 import netmaskBitsWebP from "./img/portfolio/netmask-bits.webp";
 import osiVizWebP from "./img/portfolio/osi-viz.webp";
 import parsonsWebP from "./img/portfolio/parsons.webp";
+import percentWheelWebP from "./img/portfolio/percentwheel.webp";
 import portsAndSocketsWebP from "./img/portfolio/ports-and-sockets.webp";
 import pypobotWebP from "./img/portfolio/pypobot.webp";
 import rebasicWebP from "./img/portfolio/rebasic.webp";
@@ -355,6 +357,28 @@ export const mathItemList: PortfolioItemData[] = [
     projectName: "graphit",
     repoURL: GITHUB_BASE_URL + "graphit",
     webURL: "https://mathbuffet.party",
+  },
+  {
+    altText: "Add Blocks illustration showing 34 + 25 as tens and ones blocks",
+    date: "October 2026",
+    description:
+      "An interactive place-value activity that represents two-, three-, and four-digit addition with blocks. Learners move the blocks together and see how groups of ten carry into the next column.",
+    focus: "TypeScript + place-value addition",
+    imageNameWebP: addBlocksWebP,
+    projectName: "Add Blocks",
+    repoURL: GITHUB_BASE_URL + "addblocks",
+    webURL: "https://addblocks.netlify.app",
+  },
+  {
+    altText: "Percent Wheel illustration showing 5/8 as 62.5% on a shaded wheel",
+    date: "October 2026",
+    description:
+      "An interactive wheel for exploring fractions as percentages. Learners can change the numerator or denominator, or drag around the wheel to adjust the shaded fraction and see its percentage.",
+    focus: "TypeScript + fractions + percentages",
+    imageNameWebP: percentWheelWebP,
+    projectName: "Percent Wheel",
+    repoURL: GITHUB_BASE_URL + "percentwheel",
+    webURL: "https://percentwheel.netlify.app",
   },
 ];
 
