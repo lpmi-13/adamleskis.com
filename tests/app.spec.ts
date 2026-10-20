@@ -140,6 +140,17 @@ test('Napkin Chats links to its repository and live meeting simulation', async (
     .toHaveAttribute('href', 'https://napkin-chats.netlify.app');
 });
 
+test('SLO Jams links to its live site without exposing its private repository', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Open SLO Jams details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'SLO Jams' });
+  await expect(dialog).toContainText('Service Level Objectives');
+  await expect(dialog.getByRole('link', { name: 'https://slo-jams.com' }))
+    .toHaveAttribute('href', 'https://slo-jams.com');
+  await expect(dialog.getByText('Github repository')).toHaveCount(0);
+});
+
 test('describes how fast am I as a static TypeScript app', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('button', { name: 'Open how fast am I? details' }).click();

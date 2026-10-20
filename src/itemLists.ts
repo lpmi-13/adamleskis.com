@@ -25,6 +25,7 @@ import rhymeMatchWebP from "./img/portfolio/rhyme-match.webp";
 import sadPodsWebP from "./img/portfolio/sadpods-smallest.webp";
 import semverWebP from "./img/portfolio/semver.webp";
 import sentenceFactoryWebP from "./img/portfolio/sentence-factory.webp";
+import sloJamsWebP from "./img/portfolio/slo-jams.webp";
 import stressMazeWebP from "./img/portfolio/stress-maze.webp";
 import stressMatchWebP from "./img/portfolio/stress-match-small.webp";
 import toneVizWebP from "./img/portfolio/tone-viz.webp";
@@ -438,5 +439,16 @@ export const miscItemList: PortfolioItemData[] = [
     projectName: "Karaoke Mix",
     repoURL: GITHUB_BASE_URL + "karaoke-mix",
     webURL: "https://karaoke-mix.netlify.app",
+  },
+  {
+    altText:
+      "Yellow SLO Jams chart icon inside a teal circle and white ring on an orange background",
+    date: "October 2025",
+    description:
+      "A personal goals app built around Service Level Objectives. Users set targets for habits and metrics, log events, and follow their progress in charts. It supports counts, measurements, check-ins, durations, and ratings with daily, weekly, or monthly goals.",
+    focus: "TypeScript + React + Cloudflare Workers + personal SLOs",
+    imageNameWebP: sloJamsWebP,
+    projectName: "SLO Jams",
+    webURL: "https://slo-jams.com",
   },
 ];
