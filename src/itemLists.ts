@@ -10,6 +10,7 @@ import graphitWebP from "./img/portfolio/graphit.webp";
 import howFastWebP from "./img/portfolio/howfast_circle.webp";
 import ipWebP from "./img/portfolio/ip.webp";
 import k8sDOWebP from "./img/portfolio/k8sDO.webp";
+import karaokeMixWebP from "./img/portfolio/karaoke-mix.webp";
 import mergeAMaticWebP from "./img/portfolio/merge-a-matic.webp";
 import napkinChatsWebP from "./img/portfolio/napkin-chats.webp";
 import netmaskBitsWebP from "./img/portfolio/netmask-bits.webp";
@@ -425,5 +426,17 @@ export const miscItemList: PortfolioItemData[] = [
     imageNameWebP: githubUserStatsWebP,
     projectName: "GitHub user stats",
     repoURL: GITHUB_BASE_URL + "githubuserstats",
+  },
+  {
+    altText:
+      "Two vinyl records connected by a turquoise waveform, with a microphone above them inside a white circle",
+    date: "September 2026",
+    description:
+      "A browser-only song finder for mixing lyrics from one track into another. Search or browse a 50,000-song catalog, then compare familiar recordings in exact, flexible, or exploratory estimated-tempo bands. An offline pipeline builds the static catalog from MusicBrainz, AcousticBrainz, and ListenBrainz data.",
+    focus: "TypeScript + React + song tempo matching + music data",
+    imageNameWebP: karaokeMixWebP,
+    projectName: "Karaoke Mix",
+    repoURL: GITHUB_BASE_URL + "karaoke-mix",
+    webURL: "https://karaoke-mix.netlify.app",
   },
 ];
