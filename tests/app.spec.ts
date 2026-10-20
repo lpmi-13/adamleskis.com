@@ -80,6 +80,7 @@ test('lists new projects in their intended sections', async ({ page }) => {
   await expect(technologySection.getByRole('heading', { name: 'use-practice' })).toBeVisible();
   await expect(technologySection.getByRole('heading', { name: 'OSI Viz' })).toBeVisible();
   await expect(technologySection.getByRole('heading', { name: 'ports ≠ sockets' })).toBeVisible();
+  await expect(technologySection.getByRole('heading', { name: 'Napkin Chats' })).toBeVisible();
 
   const languageSection = page.locator('#language');
   await expect(languageSection.getByRole('heading', { name: 'Rhyme Match' })).toBeVisible();
@@ -117,13 +118,26 @@ test('places the newest portfolio additions at the end of the technology grid', 
   await page.goto('/');
 
   const projectNames = await page.locator('#technology .portfolio-item h3').allTextContents();
-  expect(projectNames.slice(-5)).toEqual([
+  expect(projectNames.slice(-6)).toEqual([
     'OSI Viz',
     'ports ≠ sockets',
     'use-tool',
     'use-practice',
     'Doom Perf',
+    'Napkin Chats',
   ]);
+});
+
+test('Napkin Chats links to its repository and live meeting simulation', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Open Napkin Chats details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'Napkin Chats' });
+  await expect(dialog).toContainText('capacity planning');
+  await expect(dialog.getByRole('link', { name: 'https://github.com/lpmi-13/napkin-chats' }))
+    .toHaveAttribute('href', 'https://github.com/lpmi-13/napkin-chats');
+  await expect(dialog.getByRole('link', { name: 'https://napkin-chats.netlify.app' }))
+    .toHaveAttribute('href', 'https://napkin-chats.netlify.app');
 });
 
 test('describes how fast am I as a static TypeScript app', async ({ page }) => {

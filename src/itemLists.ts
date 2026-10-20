@@ -11,6 +11,7 @@ import howFastWebP from "./img/portfolio/howfast_circle.webp";
 import ipWebP from "./img/portfolio/ip.webp";
 import k8sDOWebP from "./img/portfolio/k8sDO.webp";
 import mergeAMaticWebP from "./img/portfolio/merge-a-matic.webp";
+import napkinChatsWebP from "./img/portfolio/napkin-chats.webp";
 import netmaskBitsWebP from "./img/portfolio/netmask-bits.webp";
 import osiVizWebP from "./img/portfolio/osi-viz.webp";
 import parsonsWebP from "./img/portfolio/parsons.webp";
@@ -209,6 +210,18 @@ export const techItemList: PortfolioItemData[] = [
     projectName: "Doom Perf",
     repoURL: GITHUB_BASE_URL + "doom-perf",
     webURL: "https://labs.iximiuz.com/playgrounds/doom-perf-c0bd32e1",
+  },
+  {
+    altText:
+      "Blue and orange speech bubbles beside a napkin showing 100,000 users multiplied by two requests per user per day, yielding about two requests per second",
+    date: "August 2026",
+    description:
+      "A mobile-first meeting simulation for practising back-of-the-envelope capacity planning. Six short animated meetings turn users and daily actions into average and peak request rates, bandwidth, and retained storage, with different participation levels and replayable scenarios.",
+    focus: "TypeScript + system design + capacity planning",
+    imageNameWebP: napkinChatsWebP,
+    projectName: "Napkin Chats",
+    repoURL: GITHUB_BASE_URL + "napkin-chats",
+    webURL: "https://napkin-chats.netlify.app",
   },
 ];
 
