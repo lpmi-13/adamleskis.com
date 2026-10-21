@@ -53,7 +53,7 @@ const ModalFrame = ({ children, modalId, onClose, title }: ModalFrameProps) => {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="btn btn-default"
+                  className="btn modal-close-btn"
                 >
                   Close
                 </button>

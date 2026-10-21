@@ -28,15 +28,6 @@ h2 {
   font-size: 2em;
 }
 
-.list-inline {
-  display: flex;
-  flex-direction: column;
-
-  li {
-    padding: 1em 0;
-  }
-}
-
 .navbar-collapse {
   transition: max-height 0.3s ease;
   max-height: 0;

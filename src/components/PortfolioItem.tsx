@@ -25,11 +25,6 @@ const PortfolioItem = ({
               aria-controls={modalId}
               aria-label={`Open ${projectName} details`}
             >
-                <span className="caption" aria-hidden="true">
-                    <span className="caption-content">
-                      <span className="portfolio-icon">+</span>
-                    </span>
-                </span>
                 <img
                   src={imageNameWebP}
                   className="img-responsive"

@@ -200,3 +200,15 @@ test('new USE projects expose their repository and playground links', async ({ p
   await expect(practiceDialog.getByRole('link', { name: playgroundUrl }))
     .toHaveAttribute('href', playgroundUrl);
 });
+
+test('Project Ideas samples five ideas and points to the current-projects repo', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Open project ideas details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'Project Ideas' });
+  await expect(dialog.locator('.detail-list > li')).toHaveCount(5);
+  await expect(dialog.getByRole('link', { name: 'current-projects repo on GitHub' }))
+    .toHaveAttribute('href', 'https://github.com/lpmi-13/current-projects');
+  await expect(dialog.getByRole('link', { name: 'https://github.com/lpmi-13/current-projects' }))
+    .toHaveAttribute('href', 'https://github.com/lpmi-13/current-projects');
+});
