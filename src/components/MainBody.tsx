@@ -209,8 +209,6 @@ const MainBody = () => {
         )}
         {activeSpecial?.type === 'presentations' && (
             <PresentationsModal
-              altText={activeSpecial.altText}
-              imageNameWebP={activeSpecial.imageNameWebP}
               modalId={activeSpecial.modalId}
               onClose={handleCloseModal}
             />

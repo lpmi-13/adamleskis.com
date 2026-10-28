@@ -68,8 +68,22 @@ test('provides descriptive alt text for every image', async ({ page }) => {
 
   await page.getByRole('button', { name: 'Open presentations details' }).click();
   await expect(page.getByRole('dialog', { name: 'Talks' }).getByRole('img', {
-    name: 'Black handheld microphone inside a white circle',
+    name: 'YouTube preview card for DevEdOps, day 79 of 90DaysOfDevOps 2024',
   })).toBeVisible();
+});
+
+test('lists each talk with its video preview and link', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Open presentations details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'Talks' });
+  await expect(dialog.getByRole('heading', { name: 'DevEdOps' })).toBeVisible();
+  await expect(dialog.getByRole('link', { name: 'YouTube preview card for DevEdOps, day 79 of 90DaysOfDevOps 2024' }))
+    .toHaveAttribute('href', 'https://www.youtube.com/watch?v=5-Pa2odaGeg');
+  await expect(dialog.getByRole('link', { name: 'https://www.youtube.com/watch?v=5-Pa2odaGeg' })).toBeVisible();
+  await expect(dialog.getByRole('link', { name: 'https://www.youtube.com/watch?v=HkkX8_miRIc' })).toBeVisible();
+  await expectNoHorizontalOverflow(page);
+  await expectNoA11yViolations(page);
 });
 
 test('lists new projects in their intended sections', async ({ page }) => {
