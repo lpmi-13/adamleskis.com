@@ -5,6 +5,7 @@ import anwritingWebP from "./img/portfolio/anwriting.webp";
 import cakeModuleWebP from "./img/portfolio/cake-module.webp";
 import clockWebP from "./img/portfolio/clock.webp";
 import doomPerfWebP from "./img/portfolio/doom-perf.webp";
+import forkscapeWebP from "./img/portfolio/forkscape.webp";
 import githubUserStatsWebP from "./img/portfolio/githubUserStats.webp";
 import graphitWebP from "./img/portfolio/graphit.webp";
 import howFastWebP from "./img/portfolio/howfast_circle.webp";
@@ -224,6 +225,18 @@ export const techItemList: PortfolioItemData[] = [
     projectName: "Napkin Chats",
     repoURL: GITHUB_BASE_URL + "napkin-chats",
     webURL: "https://napkin-chats.netlify.app",
+  },
+  {
+    altText:
+      "3D model of an amber master process deck and blue and pink worker decks floating above a grid floor of memory frames, with thin lines tracing pages to shared purple frames and to each worker's own copies",
+    date: "October 2026",
+    description:
+      "An explorable explanation of what Linux fork() shares, what a write copies, and why process memory numbers can mislead. Eight scenarios replay production memory problems in pre-fork servers such as Gunicorn, in a flat or 3D view, and learners can select any process, page, or frame to see how it works.",
+    focus: "TypeScript + three.js + Linux fork() + copy-on-write memory",
+    imageNameWebP: forkscapeWebP,
+    projectName: "Forkscape",
+    repoURL: GITHUB_BASE_URL + "forkscape",
+    webURL: "https://forkscape.netlify.app",
   },
 ];
 

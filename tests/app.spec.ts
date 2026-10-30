@@ -132,13 +132,14 @@ test('places the newest portfolio additions at the end of the technology grid', 
   await page.goto('/');
 
   const projectNames = await page.locator('#technology .portfolio-item h3').allTextContents();
-  expect(projectNames.slice(-6)).toEqual([
+  expect(projectNames.slice(-7)).toEqual([
     'OSI Viz',
     'ports ≠ sockets',
     'use-tool',
     'use-practice',
     'Doom Perf',
     'Napkin Chats',
+    'Forkscape',
   ]);
 });
 
@@ -152,6 +153,18 @@ test('Napkin Chats links to its repository and live meeting simulation', async (
     .toHaveAttribute('href', 'https://github.com/lpmi-13/napkin-chats');
   await expect(dialog.getByRole('link', { name: 'https://napkin-chats.netlify.app' }))
     .toHaveAttribute('href', 'https://napkin-chats.netlify.app');
+});
+
+test('Forkscape links to its repository and live explorable explanation', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Open Forkscape details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'Forkscape' });
+  await expect(dialog).toContainText('copy-on-write');
+  await expect(dialog.getByRole('link', { name: 'https://github.com/lpmi-13/forkscape' }))
+    .toHaveAttribute('href', 'https://github.com/lpmi-13/forkscape');
+  await expect(dialog.getByRole('link', { name: 'https://forkscape.netlify.app' }))
+    .toHaveAttribute('href', 'https://forkscape.netlify.app');
 });
 
 test('SLO Jams links to its live site without exposing its private repository', async ({ page }) => {
