@@ -77,6 +77,11 @@ test('lists each talk with its video preview and link', async ({ page }) => {
   await page.getByRole('button', { name: 'Open presentations details' }).click();
 
   const dialog = page.getByRole('dialog', { name: 'Talks' });
+  await expect(dialog.getByRole('heading', { name: 'Automating AI out of a Job: Vibing SRE Learning Materials' })).toBeVisible();
+  await expect(dialog.getByRole('link', { name: 'YouTube preview card for Automating AI out of a Job: Vibing SRE Learning Materials at SREcon26 EMEA' }))
+    .toHaveAttribute('href', 'https://www.youtube.com/watch?v=SzEqq8gFBi0');
+  await expect(dialog.getByRole('link', { name: 'https://www.youtube.com/watch?v=SzEqq8gFBi0' })).toBeVisible();
+  await expect(dialog.getByRole('link', { name: 'https://www.usenix.org/conference/srecon26emea/presentation/leskis' })).toBeVisible();
   await expect(dialog.getByRole('heading', { name: 'DevEdOps' })).toBeVisible();
   await expect(dialog.getByRole('link', { name: 'YouTube preview card for DevEdOps, day 79 of 90DaysOfDevOps 2024' }))
     .toHaveAttribute('href', 'https://www.youtube.com/watch?v=5-Pa2odaGeg');

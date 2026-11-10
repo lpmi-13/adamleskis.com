@@ -3,6 +3,7 @@ import ModalFrame from './ModalFrame';
 
 import devEdOpsWebP from '../img/talks/devedops.webp';
 import jsOxfordWebP from '../img/talks/js-oxford.webp';
+import srecon26WebP from '../img/talks/srecon26.webp';
 
 type PresentationsModalProps = {
     modalId: string;
@@ -12,6 +13,7 @@ type PresentationsModalProps = {
 type Talk = {
     date: string;
     description: string;
+    programmeURL?: string;
     thumbnailAltText: string;
     thumbnailWebP: string;
     title: string;
@@ -20,6 +22,16 @@ type Talk = {
 };
 
 const talks: Talk[] = [
+    {
+        date: 'October 15, 2026',
+        description: 'In this talk I show how I used AI to build three small tools for learning Linux performance, including a live telemetry view in Doom. The goal is to make hands-on learning easier without relying on AI to answer every question.',
+        programmeURL: 'https://www.usenix.org/conference/srecon26emea/presentation/leskis',
+        thumbnailAltText: 'YouTube preview card for Automating AI out of a Job: Vibing SRE Learning Materials at SREcon26 EMEA',
+        thumbnailWebP: srecon26WebP,
+        title: 'Automating AI out of a Job: Vibing SRE Learning Materials',
+        venue: 'SREcon26 EMEA',
+        videoURL: 'https://www.youtube.com/watch?v=SzEqq8gFBi0',
+    },
     {
         date: 'March 19, 2024',
         description: "In this talk I apply the Three Ways of DevOps to learning DevOps itself. Most free resources are either input-based, like blogs, or hand you the complete solution, so learners rarely get to practise solving problems on their own. Faster flow means small, focused materials that don't need a big time commitment, faster feedback means automated checks while you're working through them, and continuous learning means sharing those materials as open-source repos and live web services for everyone to explore.",
@@ -43,7 +55,7 @@ const talks: Talk[] = [
 const PresentationsModal = ({ modalId, onClose }: PresentationsModalProps) => {
     return (
         <ModalFrame modalId={modalId} onClose={onClose} title="Talks">
-            <p className="project-description">This is the current list of presentations I've given related to web development and DevOps education</p>
+            <p className="project-description">This is the current list of presentations I've given related to web development, DevOps, and SRE education</p>
             <ul className="talk-list">
                 {talks.map((talk) => (
                     <li key={talk.videoURL}>
@@ -75,6 +87,14 @@ const PresentationsModal = ({ modalId, onClose }: PresentationsModalProps) => {
                                     <a className="meta-link" href={talk.videoURL}>{talk.videoURL}</a>
                                 </strong>
                             </li>
+                            {talk.programmeURL && (
+                                <li className="web-link">
+                                    <span className="meta-label">Programme</span>
+                                    <strong>
+                                        <a className="meta-link" href={talk.programmeURL}>{talk.programmeURL}</a>
+                                    </strong>
+                                </li>
+                            )}
                         </ul>
                     </li>
                 ))}
