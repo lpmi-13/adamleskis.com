@@ -133,18 +133,51 @@ test('presents the revamped Rhyme Match game with current project links', async 
   })).toHaveAttribute('href', 'https://rhyme-match-game.netlify.app');
 });
 
-test('places the newest portfolio additions at the end of the technology grid', async ({ page }) => {
+test('orders each section from oldest to newest project', async ({ page }) => {
   await page.goto('/');
 
-  const projectNames = await page.locator('#technology .portfolio-item h3').allTextContents();
-  expect(projectNames.slice(-7)).toEqual([
-    'OSI Viz',
-    'ports ≠ sockets',
+  const namesIn = (sectionId: string) => page.locator(`#${sectionId} .portfolio-item h3`).allTextContents();
+
+  expect(await namesIn('technology')).toEqual([
+    'rebasic',
+    'merge-a-matic',
+    'reflog power',
+    'ipinder',
+    'netmask slider',
+    'submodz',
+    'parsons problems',
+    'cron-trigger',
+    'semver-questions',
+    'sadpods',
+    'jq-pilot',
     'use-tool',
     'use-practice',
-    'Doom Perf',
+    'OSI Viz',
+    'ports ≠ sockets',
     'Napkin Chats',
+    'Doom Perf',
     'Forkscape',
+  ]);
+  expect(await namesIn('language')).toEqual([
+    'A(n)Tweet',
+    'A(n)Redd',
+    'A(n)Writing',
+    'Touchwords',
+    'sentence factory',
+    'stress match',
+    'stress maze',
+    'Thai word slice',
+    'Thai phrase tones',
+    'Rhyme Match',
+  ]);
+  expect(await namesIn('math')).toEqual(['graphit', 'Add Blocks', 'Percent Wheel']);
+  expect((await namesIn('miscellaneous')).slice(0, 6)).toEqual([
+    'pypobot',
+    'GitHub user stats',
+    'how fast am I?',
+    'K8s The Hard Way - DO',
+    'SLO Jams',
+    'Karaoke Mix',
   ]);
 });
 
@@ -170,6 +203,17 @@ test('Forkscape links to its repository and live explorable explanation', async 
     .toHaveAttribute('href', 'https://github.com/lpmi-13/forkscape');
   await expect(dialog.getByRole('link', { name: 'https://forkscape.netlify.app' }))
     .toHaveAttribute('href', 'https://forkscape.netlify.app');
+});
+
+test('jq-pilot links to its repository without a live site', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Open jq-pilot details' }).click();
+
+  const dialog = page.getByRole('dialog', { name: 'jq-pilot' });
+  await expect(dialog).toContainText('practising jq');
+  await expect(dialog.getByRole('link', { name: 'https://github.com/lpmi-13/jq-pilot' }))
+    .toHaveAttribute('href', 'https://github.com/lpmi-13/jq-pilot');
+  await expect(dialog.getByText('Live at')).toHaveCount(0);
 });
 
 test('SLO Jams links to its live site without exposing its private repository', async ({ page }) => {

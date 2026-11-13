@@ -10,6 +10,7 @@ import githubUserStatsWebP from "./img/portfolio/githubUserStats.webp";
 import graphitWebP from "./img/portfolio/graphit.webp";
 import howFastWebP from "./img/portfolio/howfast_circle.webp";
 import ipWebP from "./img/portfolio/ip.webp";
+import jqPilotWebP from "./img/portfolio/jq-pilot.webp";
 import k8sDOWebP from "./img/portfolio/k8sDO.webp";
 import karaokeMixWebP from "./img/portfolio/karaoke-mix.webp";
 import mergeAMaticWebP from "./img/portfolio/merge-a-matic.webp";
@@ -157,27 +158,14 @@ export const techItemList: PortfolioItemData[] = [
   },
   {
     altText:
-      "Colour-coded protocol layer blocks stacked inside a dashed network boundary, with a payload toggle and one more layer being added",
-    date: "July 2026",
+      "Prompt asking for the raw value of name above a grey JSON card with \"Ada\" highlighted in orange, an arrow, and a second card holding just Ada",
+    date: "December 2022",
     description:
-      "An interactive visualization that makes network encapsulation visible by showing how HTTP data is wrapped in TLS, TCP, IP, and VXLAN metadata. Learners can inspect each layer and step through a request being wrapped and unwrapped.",
-    focus: "JavaScript + TCP/IP encapsulation",
-    imageNameWebP: osiVizWebP,
-    projectName: "OSI Viz",
-    repoURL: GITHUB_BASE_URL + "osi-viz",
-    webURL: "https://osi-viz.netlify.app",
-  },
-  {
-    altText:
-      "One port fanning out to a column of power sockets that continues past the frame",
-    date: "July 2026",
-    description:
-      "An interactive explainer for the difference between ports, kernel sockets, and process file descriptors. Learners can follow either side of an nginx connection and explore what happens when the server reaches its file-descriptor limit.",
-    focus: "TypeScript + TCP sockets + Linux",
-    imageNameWebP: portsAndSocketsWebP,
-    projectName: "ports ≠ sockets",
-    repoURL: GITHUB_BASE_URL + "ports-and-sockets",
-    webURL: "https://ports-and-sockets.netlify.app",
+      "A micromaterial for practising jq. A Go server generates randomized JSON exercises, such as getting a nested value, deleting a key, or grouping objects, and the page shows the input next to the expected output. Learners fetch the question with curl, transform it with jq, and POST the result back to check it. Runs locally with Go and Node, or in Docker.",
+    focus: "Go + React + jq",
+    imageNameWebP: jqPilotWebP,
+    projectName: "jq-pilot",
+    repoURL: GITHUB_BASE_URL + "jq-pilot",
   },
   {
     altText:
@@ -204,15 +192,27 @@ export const techItemList: PortfolioItemData[] = [
   },
   {
     altText:
-      "8-bit pixel-art Doom Perf room: a glowing green memory spire capped in orange and blue between library shelves",
-    date: "September 2026",
+      "Colour-coded protocol layer blocks stacked inside a dashed network boundary, with a payload toggle and one more layer being added",
+    date: "July 2026",
     description:
-      "A fork of a browser Doom port turned into a USE-methodology performance lab. CPU, memory, disk, and network utilization, saturation, and errors become explorable Doom rooms and live, engine-driven instruments, fed by a Go telemetry service that samples Linux /proc and /sys and streams it into the patched WebAssembly engine. Runs live in an iximiuz Labs playground with a bundled load generator for creating real host load.",
-    focus: "TypeScript + Go + WebAssembly + Doom + Linux performance + USE method",
-    imageNameWebP: doomPerfWebP,
-    projectName: "Doom Perf",
-    repoURL: GITHUB_BASE_URL + "doom-perf",
-    webURL: "https://labs.iximiuz.com/playgrounds/doom-perf-c0bd32e1",
+      "An interactive visualization that makes network encapsulation visible by showing how HTTP data is wrapped in TLS, TCP, IP, and VXLAN metadata. Learners can inspect each layer and step through a request being wrapped and unwrapped.",
+    focus: "JavaScript + TCP/IP encapsulation",
+    imageNameWebP: osiVizWebP,
+    projectName: "OSI Viz",
+    repoURL: GITHUB_BASE_URL + "osi-viz",
+    webURL: "https://osi-viz.netlify.app",
+  },
+  {
+    altText:
+      "One port fanning out to a column of power sockets that continues past the frame",
+    date: "July 2026",
+    description:
+      "An interactive explainer for the difference between ports, kernel sockets, and process file descriptors. Learners can follow either side of an nginx connection and explore what happens when the server reaches its file-descriptor limit.",
+    focus: "TypeScript + TCP sockets + Linux",
+    imageNameWebP: portsAndSocketsWebP,
+    projectName: "ports ≠ sockets",
+    repoURL: GITHUB_BASE_URL + "ports-and-sockets",
+    webURL: "https://ports-and-sockets.netlify.app",
   },
   {
     altText:
@@ -225,6 +225,18 @@ export const techItemList: PortfolioItemData[] = [
     projectName: "Napkin Chats",
     repoURL: GITHUB_BASE_URL + "napkin-chats",
     webURL: "https://napkin-chats.netlify.app",
+  },
+  {
+    altText:
+      "8-bit pixel-art Doom Perf room: a glowing green memory spire capped in orange and blue between library shelves",
+    date: "September 2026",
+    description:
+      "A fork of a browser Doom port turned into a USE-methodology performance lab. CPU, memory, disk, and network utilization, saturation, and errors become explorable Doom rooms and live, engine-driven instruments, fed by a Go telemetry service that samples Linux /proc and /sys and streams it into the patched WebAssembly engine. Runs live in an iximiuz Labs playground with a bundled load generator for creating real host load.",
+    focus: "TypeScript + Go + WebAssembly + Doom + Linux performance + USE method",
+    imageNameWebP: doomPerfWebP,
+    projectName: "Doom Perf",
+    repoURL: GITHUB_BASE_URL + "doom-perf",
+    webURL: "https://labs.iximiuz.com/playgrounds/doom-perf-c0bd32e1",
   },
   {
     altText:
@@ -243,86 +255,15 @@ export const techItemList: PortfolioItemData[] = [
 export const languageItemList: PortfolioItemData[] = [
   {
     altText:
-      "Speaker and microphone, each followed by one continuous pitch contour, with the recorded contour in orange",
-    date: "June 2026",
+      "Speech bubble sentence with one empty slot and three answer choices, the middle one selected",
+    date: "June 2015",
     description:
-      "A local-first browser app for listening to and reproducing pitch relationships across complete Thai phrases. Learners can compare their own recording with contextual reference audio and phrase-relative pitch contours, with all analysis kept in the browser.",
-    focus: "TypeScript + Web Audio + Thai phrase tones",
-    imageNameWebP: toneVizWebP,
-    projectName: "Thai phrase tones",
-    repoURL: GITHUB_BASE_URL + "tone-viz",
-    webURL: "https://tone-viz.netlify.app",
-  },
-  {
-    altText:
-      "Thai phrase ฉันกินข้าว on a conveyor belt, with ฉัน lifted off at the word boundary",
-    date: "April 2026",
-    description:
-      "A factory-themed slicing game for practising Thai word boundaries. Learners cut moving phrases at valid boundaries across six levels built from a 500-entry, beginner-to-intermediate corpus.",
-    focus: "JavaScript + Thai word segmentation",
-    imageNameWebP: wordSliceWebP,
-    projectName: "Thai word slice",
-    repoURL: GITHUB_BASE_URL + "word-slice",
-    webURL: "https://word-slice.netlify.app",
-  },
-  {
-    altText: "Honeycomb maze with a zigzag path traced through orange cells",
-    date: "March 2026",
-    description:
-      "A hex-grid maze for practising English word stress with academic vocabulary. Learners trace a contiguous path of words that matches a target stress pattern.",
-    focus: "JavaScript + Academic Word List + word stress",
-    imageNameWebP: stressMazeWebP,
-    projectName: "stress maze",
-    repoURL: GITHUB_BASE_URL + "stress-maze",
-    webURL: "https://stress-maze.netlify.app",
-  },
-  {
-    altText:
-      "Two word cards with the same strong-weak stress dots joined by an equals sign",
-    date: "September 2019",
-    description:
-      "A simple game to help learners focus on the stress in academic vocabulary.",
-    focus: "Preact + the Academic Word List (Coxhead, 2000)",
-    imageNameWebP: stressMatchWebP,
-    projectName: "stress match",
-    repoURL: GITHUB_BASE_URL + "stress-match-game",
-    webURL: "https://stress-match.netlify.app",
-  },
-  {
-    altText:
-      "Word blocks on a conveyor belt with one orange block lifted off the line",
-    date: "March 2017",
-    description:
-      "An English-learning game for noticing incorrect verb forms in context. Learners find a verb reset to its lemma as each sentence moves along a production line, then compare it with the original form across simple-past, -ing, and past-participle shifts.",
-    focus: "TypeScript + Universal Dependencies corpus + verb forms",
-    imageNameWebP: sentenceFactoryWebP,
-    projectName: "sentence factory",
-    repoURL: GITHUB_BASE_URL + "sentencefactory",
-    webURL: "https://sentencefactory.netlify.app",
-  },
-  {
-    altText:
-      "The word taked bursting in an orange starburst, with gems flying out and a tap cursor",
-    date: "August 2016",
-    description:
-      "A visual game for practising irregular past-tense forms. Learners tap incorrectly regularised verbs while avoiding genuine regular verbs, then type the correct forms in a timed correction round.",
-    focus: "JavaScript + irregular past tense",
-    imageNameWebP: touchwordsWebP,
-    projectName: "Touchwords",
-    repoURL: GITHUB_BASE_URL + "touchwords",
-    webURL: "https://touchwords.netlify.app",
-  },
-  {
-    altText:
-      "Document page with a proofreading caret inserting an orange word between two words",
-    date: "April 2016",
-    description:
-      "A genre-based proofreading studio for practising a, an, and the in fiction, academic, and business writing. Guided mode offers inline choices, while Editor mode asks learners to restore every article in an editable draft.",
-    focus: "TypeScript + English articles + proofreading",
-    imageNameWebP: anwritingWebP,
-    projectName: "A(n)Writing",
-    repoURL: GITHUB_BASE_URL + "anwriting",
-    webURL: "https://anwriting.netlify.app",
+      "An English article practice app built around attributed Tatoeba sentences. Learners search by topic and restore one missing a, an, or the in balanced sets of short, authentic examples.",
+    focus: "TypeScript + Tatoeba API + English articles",
+    imageNameWebP: antweetWebP,
+    projectName: "A(n)Tweet",
+    repoURL: GITHUB_BASE_URL + "antweet",
+    webURL: "https://antweet.netlify.app",
   },
   {
     altText:
@@ -338,15 +279,86 @@ export const languageItemList: PortfolioItemData[] = [
   },
   {
     altText:
-      "Speech bubble sentence with one empty slot and three answer choices, the middle one selected",
-    date: "June 2015",
+      "Document page with a proofreading caret inserting an orange word between two words",
+    date: "April 2016",
     description:
-      "An English article practice app built around attributed Tatoeba sentences. Learners search by topic and restore one missing a, an, or the in balanced sets of short, authentic examples.",
-    focus: "TypeScript + Tatoeba API + English articles",
-    imageNameWebP: antweetWebP,
-    projectName: "A(n)Tweet",
-    repoURL: GITHUB_BASE_URL + "antweet",
-    webURL: "https://antweet.netlify.app",
+      "A genre-based proofreading studio for practising a, an, and the in fiction, academic, and business writing. Guided mode offers inline choices, while Editor mode asks learners to restore every article in an editable draft.",
+    focus: "TypeScript + English articles + proofreading",
+    imageNameWebP: anwritingWebP,
+    projectName: "A(n)Writing",
+    repoURL: GITHUB_BASE_URL + "anwriting",
+    webURL: "https://anwriting.netlify.app",
+  },
+  {
+    altText:
+      "The word taked bursting in an orange starburst, with gems flying out and a tap cursor",
+    date: "August 2016",
+    description:
+      "A visual game for practising irregular past-tense forms. Learners tap incorrectly regularised verbs while avoiding genuine regular verbs, then type the correct forms in a timed correction round.",
+    focus: "JavaScript + irregular past tense",
+    imageNameWebP: touchwordsWebP,
+    projectName: "Touchwords",
+    repoURL: GITHUB_BASE_URL + "touchwords",
+    webURL: "https://touchwords.netlify.app",
+  },
+  {
+    altText:
+      "Word blocks on a conveyor belt with one orange block lifted off the line",
+    date: "March 2017",
+    description:
+      "An English-learning game for noticing incorrect verb forms in context. Learners find a verb reset to its lemma as each sentence moves along a production line, then compare it with the original form across simple-past, -ing, and past-participle shifts.",
+    focus: "TypeScript + Universal Dependencies corpus + verb forms",
+    imageNameWebP: sentenceFactoryWebP,
+    projectName: "sentence factory",
+    repoURL: GITHUB_BASE_URL + "sentencefactory",
+    webURL: "https://sentencefactory.netlify.app",
+  },
+  {
+    altText:
+      "Two word cards with the same strong-weak stress dots joined by an equals sign",
+    date: "September 2019",
+    description:
+      "A simple game to help learners focus on the stress in academic vocabulary.",
+    focus: "Preact + the Academic Word List (Coxhead, 2000)",
+    imageNameWebP: stressMatchWebP,
+    projectName: "stress match",
+    repoURL: GITHUB_BASE_URL + "stress-match-game",
+    webURL: "https://stress-match.netlify.app",
+  },
+  {
+    altText: "Honeycomb maze with a zigzag path traced through orange cells",
+    date: "March 2026",
+    description:
+      "A hex-grid maze for practising English word stress with academic vocabulary. Learners trace a contiguous path of words that matches a target stress pattern.",
+    focus: "JavaScript + Academic Word List + word stress",
+    imageNameWebP: stressMazeWebP,
+    projectName: "stress maze",
+    repoURL: GITHUB_BASE_URL + "stress-maze",
+    webURL: "https://stress-maze.netlify.app",
+  },
+  {
+    altText:
+      "Thai phrase ฉันกินข้าว on a conveyor belt, with ฉัน lifted off at the word boundary",
+    date: "April 2026",
+    description:
+      "A factory-themed slicing game for practising Thai word boundaries. Learners cut moving phrases at valid boundaries across six levels built from a 500-entry, beginner-to-intermediate corpus.",
+    focus: "JavaScript + Thai word segmentation",
+    imageNameWebP: wordSliceWebP,
+    projectName: "Thai word slice",
+    repoURL: GITHUB_BASE_URL + "word-slice",
+    webURL: "https://word-slice.netlify.app",
+  },
+  {
+    altText:
+      "Speaker and microphone, each followed by one continuous pitch contour, with the recorded contour in orange",
+    date: "June 2026",
+    description:
+      "A local-first browser app for listening to and reproducing pitch relationships across complete Thai phrases. Learners can compare their own recording with contextual reference audio and phrase-relative pitch contours, with all analysis kept in the browser.",
+    focus: "TypeScript + Web Audio + Thai phrase tones",
+    imageNameWebP: toneVizWebP,
+    projectName: "Thai phrase tones",
+    repoURL: GITHUB_BASE_URL + "tone-viz",
+    webURL: "https://tone-viz.netlify.app",
   },
   {
     altText:
@@ -359,7 +371,7 @@ export const languageItemList: PortfolioItemData[] = [
     projectName: "Rhyme Match",
     repoURL: GITHUB_BASE_URL + "rhyme-match-game",
     webURL: "https://rhyme-match-game.netlify.app",
-  }
+  },
 ];
 
 export const mathItemList: PortfolioItemData[] = [
@@ -402,26 +414,6 @@ export const mathItemList: PortfolioItemData[] = [
 
 export const miscItemList: PortfolioItemData[] = [
   {
-    altText: "Kubernetes and DigitalOcean logos joined by a plus sign",
-    date: "June 2021",
-    description: "An adaptation of Kubernetes The Hardway on Digital Ocean.",
-    focus: "Kubernetes",
-    imageNameWebP: k8sDOWebP,
-    projectName: "K8s The Hard Way - DO",
-    repoURL: GITHUB_BASE_URL + "kubernetes-the-hard-way-do",
-  },
-  {
-    altText: "Silhouette of a person sprinting with motion lines",
-    date: "April 2020",
-    description:
-      "A static browser app that compares a runner's time with senior outdoor national athletics records from around the world. Learners can explore every country they are faster than on an interactive map, with an attributed Wikipedia snapshot refreshed at build time.",
-    focus: "TypeScript + Vite + Wikipedia ingestion + d3-geo",
-    imageNameWebP: howFastWebP,
-    projectName: "how fast am I?",
-    repoURL: GITHUB_BASE_URL + "howfast",
-    webURL: "https://howfastami.netlify.app",
-  },
-  {
     altText: "Robot head with a wavy typo-underline mouth and a green python coiled around it",
     date: "July 2017",
     description:
@@ -442,16 +434,24 @@ export const miscItemList: PortfolioItemData[] = [
     repoURL: GITHUB_BASE_URL + "githubuserstats",
   },
   {
-    altText:
-      "Two vinyl records connected by a turquoise waveform, with a microphone above them inside a white circle",
-    date: "September 2026",
+    altText: "Silhouette of a person sprinting with motion lines",
+    date: "April 2020",
     description:
-      "A browser-only song finder for mixing lyrics from one track into another. Search or browse a 50,000-song catalog, then compare familiar recordings in exact, flexible, or exploratory estimated-tempo bands. An offline pipeline builds the static catalog from MusicBrainz, AcousticBrainz, and ListenBrainz data.",
-    focus: "TypeScript + React + song tempo matching + music data",
-    imageNameWebP: karaokeMixWebP,
-    projectName: "Karaoke Mix",
-    repoURL: GITHUB_BASE_URL + "karaoke-mix",
-    webURL: "https://karaoke-mix.netlify.app",
+      "A static browser app that compares a runner's time with senior outdoor national athletics records from around the world. Learners can explore every country they are faster than on an interactive map, with an attributed Wikipedia snapshot refreshed at build time.",
+    focus: "TypeScript + Vite + Wikipedia ingestion + d3-geo",
+    imageNameWebP: howFastWebP,
+    projectName: "how fast am I?",
+    repoURL: GITHUB_BASE_URL + "howfast",
+    webURL: "https://howfastami.netlify.app",
+  },
+  {
+    altText: "Kubernetes and DigitalOcean logos joined by a plus sign",
+    date: "June 2021",
+    description: "An adaptation of Kubernetes The Hardway on Digital Ocean.",
+    focus: "Kubernetes",
+    imageNameWebP: k8sDOWebP,
+    projectName: "K8s The Hard Way - DO",
+    repoURL: GITHUB_BASE_URL + "kubernetes-the-hard-way-do",
   },
   {
     altText:
@@ -463,5 +463,17 @@ export const miscItemList: PortfolioItemData[] = [
     imageNameWebP: sloJamsWebP,
     projectName: "SLO Jams",
     webURL: "https://slo-jams.com",
+  },
+  {
+    altText:
+      "Two vinyl records connected by a turquoise waveform, with a microphone above them inside a white circle",
+    date: "September 2026",
+    description:
+      "A browser-only song finder for mixing lyrics from one track into another. Search or browse a 50,000-song catalog, then compare familiar recordings in exact, flexible, or exploratory estimated-tempo bands. An offline pipeline builds the static catalog from MusicBrainz, AcousticBrainz, and ListenBrainz data.",
+    focus: "TypeScript + React + song tempo matching + music data",
+    imageNameWebP: karaokeMixWebP,
+    projectName: "Karaoke Mix",
+    repoURL: GITHUB_BASE_URL + "karaoke-mix",
+    webURL: "https://karaoke-mix.netlify.app",
   },
 ];
